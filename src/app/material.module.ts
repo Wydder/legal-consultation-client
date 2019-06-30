@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {
   DateAdapter,
   MatButtonModule,
+  MatCardModule,
   MatDatepickerModule,
   MatDialogModule,
   MatIconModule,
@@ -28,6 +29,7 @@ import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from 
 
 const modules = [
   MatButtonModule,
+  MatCardModule,
   MatDatepickerModule,
   MatDialogModule,
   MatIconModule,

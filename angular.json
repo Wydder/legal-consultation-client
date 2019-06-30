@@ -33,6 +33,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/flag-icon-css/css/flag-icon.min.css",
               "src/sass/styles.scss",
               "src/sass/theme.scss"
             ],

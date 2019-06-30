@@ -1,8 +1,8 @@
 @import '~@angular/material/theming';
 
-$mat-concrete : #F2F2F2;
+$mat-concrete: #F2F2F2;
 
-$mat-congress-blue : (
+$mat-congress-blue: (
   50 : #E0E9F2,
   100 : #B3C8DE,
   200 : #80A4C8,
@@ -15,6 +15,7 @@ $mat-congress-blue : (
   900 : #002161,
   A100 : #91ACFF,
   A200 : #5E86FF,
+  A300 : #4285f4,
   A400 : #2B60FF,
   A700 : #124CFF,
   contrast: (
@@ -34,7 +35,7 @@ $mat-congress-blue : (
     A700 : #FFFFFF,
   )
 );
-$mat-white : (
+$mat-white: (
   50 : #FFFFFF,
   100 : #FFFFFF,
   200 : #FFFFFF,
@@ -67,8 +68,7 @@ $mat-white : (
   )
 );
 
-
-$spaces : (
+$spaces: (
   'xs': 2px,
   'sm': 4px,
   'md': 8px,
@@ -77,22 +77,24 @@ $spaces : (
 );
 
 // legal-consult theme variables
-$legal-consult-padding-xs : map-get($spaces, 'xs');
-$legal-consult-padding-sm : map-get($spaces, 'sm');
-$legal-consult-padding-md : map-get($spaces, 'md');
-$legal-consult-padding-lg : map-get($spaces, 'lg');
-$legal-consult-padding-xl : map-get($spaces, 'xl');
+$legal-consult-padding-xs: map-get($spaces, 'xs');
+$legal-consult-padding-sm: map-get($spaces, 'sm');
+$legal-consult-padding-md: map-get($spaces, 'md');
+$legal-consult-padding-lg: map-get($spaces, 'lg');
+$legal-consult-padding-xl: map-get($spaces, 'xl');
 
-$legal-consult-margin-xs : map-get($spaces, 'xs');
-$legal-consult-margin-sm : map-get($spaces, 'sm');
-$legal-consult-margin-md : map-get($spaces, 'md');
-$legal-consult-margin-lg : map-get($spaces, 'lg');
-$legal-consult-margin-xl : map-get($spaces, 'xl');
+$legal-consult-margin-xs: map-get($spaces, 'xs');
+$legal-consult-margin-sm: map-get($spaces, 'sm');
+$legal-consult-margin-md: map-get($spaces, 'md');
+$legal-consult-margin-lg: map-get($spaces, 'lg');
+$legal-consult-margin-xl: map-get($spaces, 'xl');
 
-$legal-consult-header-height : 160px;
-$legal-consult-header-logo-size : 96px;
-$legal-consult-header-user-icon-size : 56px;
+$legal-consult-header-height: 160px;
+$legal-consult-header-logo-size: 96px;
+$legal-consult-header-user-icon-size: 56px;
 
-$legal-consult-table-margin : $legal-consult-margin-lg;
-$legal-consult-table-padding : $legal-consult-padding-md;
-$legal-consult-table-accent : $mat-concrete;
+$legal-consult-sidenav-width: 80px;
+
+$legal-consult-table-margin: $legal-consult-margin-lg;
+$legal-consult-table-padding: $legal-consult-padding-md;
+$legal-consult-table-accent: $mat-concrete;

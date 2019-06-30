@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+@import 'variables.scss';
+
+div#top-bar {
+  height: $legal-consult-header-height;
+
+  img.logo {
+    height  : $legal-consult-header-logo-size;
+    width   : auto;
+    padding : 0 $legal-consult-padding-lg;
+  }
+
+  mat-icon {
+    height    : $legal-consult-header-user-icon-size;
+    width     : $legal-consult-header-user-icon-size;
+    font-size : $legal-consult-header-user-icon-size;
+    margin    : $legal-consult-margin-md;
+    cursor    : pointer;
+  }
+
+  button {
+    font-weight    : bold;
+  }
+
+  button.mat-button:hover,
+  button.mat-button.active {
+    background-color : map-get($mat-congress-blue, 500);
+    color            : map-get($mat-congress-blue, 200);
+  }
+}

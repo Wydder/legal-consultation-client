@@ -1,0 +1,23 @@
+<div id="top-bar">
+  <div class="toolbar-row" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="has-action" fxLayout="row" fxLayoutAlign="center center" [matMenuTriggerFor]="profileMenu">
+      <span class="mat-body-2">John Doe</span>
+      <mat-icon color="primary">account_circle</mat-icon>
+
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item routerLink="/profile">Profil</button>
+        <button mat-menu-item (click)="logout()">Deconectare</button>
+      </mat-menu>
+    </div>
+
+
+    <mat-toolbar color="primary">
+      <button mat-button routerLink="/about" routerLinkActive="active">Despre</button>
+      <button mat-button routerLink="/consultation" routerLinkActive="active">In consultare</button>
+      <button mat-button routerLink="/archive" routerLinkActive="active">Arhiva</button>
+      <button mat-button routerLink="/members" routerLinkActive="active">Membri</button>
+      <button mat-button routerLink="/login" routerLinkActive="active">Log in</button>
+    </mat-toolbar>
+  </div>
+
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { Router } from '@angular/router';
+
 import {
   // Services
   AuthenticationApiService,
@@ -24,7 +26,9 @@ export class SignUpComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private authenticationApiService: AuthenticationApiService) { }
+  constructor(private router: Router,
+              private authenticationApiService: AuthenticationApiService
+  ) { }
 
   ngOnInit() {
   }
@@ -44,16 +48,12 @@ export class SignUpComponent implements OnInit {
       }
     }
 
-    const aLogin = this.newSignUp;
-    this.authenticationApiService.signup(aSignUp)
-      .subscribe(
-        (login) => this.router.navigate([this.returnUrl]),
-        (errors) => {
-          for (const error of errors) {
-            this.signUpForm.controls[errorFields[error]].markAsTouched();
-            this.signUpForm.controls[errorFields[error]].setErrors({[error]: true});
-          }
-        });
+    const aSignUp = this.newSignUp;
+
+  }
+
+  onCancel() {
+    this.router.navigate(['authentication/log-in']);
   }
 
 }

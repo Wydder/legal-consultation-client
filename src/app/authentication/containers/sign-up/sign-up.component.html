@@ -1,1 +1,81 @@
-<p>sign-up works!</p>
+<form [formGroup]="signUpForm" fxLayout="column">
+  <mat-form-field>
+    <input
+      matInput
+      #username
+      name="username"
+      maxlength="100"
+      placeholder="Username"
+      required
+      formControlName="username"
+    />
+
+    <mat-hint align="end">{{ username.value.length }} / 100</mat-hint>
+
+    <mat-error *ngIf="signUpForm.controls.name.hasError('NAME_NOT_EMPTY') || signUpForm.controls.username.hasError('required')">
+      Username este obligatoriu.
+    </mat-error>
+    <mat-error *ngIf="signUpForm.controls.username.hasError('NAME_MAX_LENGTH_100')">
+      Username-ul nu poate avea mai mult de 100 caractere.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      #firstName
+      name="firstName"
+      maxlength="100"
+      placeholder="First name"
+      required
+      formControlName="firstName"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      #lastName
+      name="lastName"
+      maxlength="100"
+      placeholder="Last name"
+      required
+      formControlName="lastName"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      #email
+      name="email"
+      maxlength="100"
+      placeholder="Email"
+      required
+      formControlName="email"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      #name
+      name="password"
+      maxlength="100"
+      placeholder="Password"
+      required
+      formControlName="password"
+      type="password"
+    />
+
+    <mat-hint align="end">{{ password.value.length }} / 100</mat-hint>
+
+    <mat-error *ngIf="signUpForm.controls.name.hasError('NAME_NOT_EMPTY') || signUpForm.controls.password.hasError('required')">
+      Numele este obligatoriu.
+    </mat-error>
+    <mat-error *ngIf="signUpForm.controls.password.hasError('NAME_MAX_LENGTH_100')">
+      Numele nu poate avea mai mult de 100 caractere.
+    </mat-error>
+  </mat-form-field>
+
+</form>

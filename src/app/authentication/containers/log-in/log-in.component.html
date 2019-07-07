@@ -5,20 +5,20 @@
         matInput
         #username
         name="username"
-        maxlength="100"
+        maxlength="40"
         placeholder="Username"
         required
         formControlName="username"
       />
 
-      <mat-hint align="end">{{ username.value.length }} / 100</mat-hint>
+      <mat-hint align="end">{{ username.value.length }} / 40</mat-hint>
 
       <mat-error
         *ngIf="logInForm.controls.username.hasError('NAME_NOT_EMPTY') || logInForm.controls.username.hasError('required')">
         Username este obligatoriu.
       </mat-error>
       <mat-error *ngIf="logInForm.controls.username.hasError('NAME_MAX_LENGTH_100')">
-        Username nu poate avea mai mult de 100 caractere.
+        Username-ul nu poate avea mai mult de 100 caractere.
       </mat-error>
     </mat-form-field>
 

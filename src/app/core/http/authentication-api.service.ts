@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 
-import { User, Login } from '@app/core';
+import { User } from '@app/core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationApiService {
@@ -21,7 +21,7 @@ export class AuthenticationApiService {
     return this.currentUserSubject.value;
   }
 
-  login(loginForm: Login) {
+  login(loginForm: User) {
     return this.http.post<any>(`${environment.api_url}/users/authenticate`, { loginForm })
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
@@ -33,6 +33,10 @@ export class AuthenticationApiService {
 
         return user;
       }));
+  }
+
+  sigup(signupForm: User) {
+    return this.http.post<any>(`${environment.api_url}/users/register`, { signupForm });
   }
 
   logout() {

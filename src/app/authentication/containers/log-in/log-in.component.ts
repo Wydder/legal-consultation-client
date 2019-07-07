@@ -7,7 +7,7 @@ import {
   // Services
   AuthenticationApiService,
   // Models
-  Login,
+  User,
 } from '@app/core';
 
 @Component({
@@ -16,7 +16,7 @@ import {
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
-  newLogin: Login;
+  newUser: User;
   returnUrl: string;
 
   public logInForm = new FormGroup({
@@ -35,8 +35,8 @@ export class LogInComponent implements OnInit {
 
   ngOnInit() {
     this.logInForm.valueChanges.subscribe((aValue) => {
-      this.newLogin = new Login();
-      this.newLogin.fromForm(aValue);
+      this.newUser = new User();
+      this.newUser.fromForm(aValue);
     });
 
     // get return url from route parameters or default to '/'
@@ -47,7 +47,7 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     const errorFields = {
       USERNAME_NOT_EMPTY: 'username',
-      USERNAME_MAX_LENGTH_100: 'username',
+      USERNAME_MAX_LENGTH_40: 'username',
       PASSWORD_NOT_EMPTY: 'password',
       PASSWORD_MAX_LENGTH_100: 'password',
     };
@@ -59,16 +59,17 @@ export class LogInComponent implements OnInit {
       }
     }
 
-    const aLogin = this.newLogin;
+    const aLogin = this.newUser;
     this.authenticationApiService.login(aLogin)
-      .subscribe(
-        (login) => this.router.navigate([this.returnUrl]),
-        (errors) => {
+      .subscribe({
+        next: login => this.router.navigate([this.returnUrl]),
+        error: errors => {
           for (const error of errors) {
             this.logInForm.controls[errorFields[error]].markAsTouched();
             this.logInForm.controls[errorFields[error]].setErrors({[error]: true});
           }
-        });
+        }
+      });
   }
 
   signUp() {

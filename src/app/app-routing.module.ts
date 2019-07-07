@@ -28,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'members',
-        loadChildren: './authentication/authentication.module#AuthenticationModule',
+        loadChildren: './members/members.module#MembersModule',
       },
       {
         path: 'authentication',

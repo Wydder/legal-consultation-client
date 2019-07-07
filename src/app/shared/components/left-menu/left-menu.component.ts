@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./left-menu.component.scss']
 })
 export class LeftMenuComponent implements OnInit {
-
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -29,5 +28,4 @@ export class LeftMenuComponent implements OnInit {
   qa() {
     this.router.navigate(['qa']);
   }
-
 }

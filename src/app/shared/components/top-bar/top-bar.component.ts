@@ -17,6 +17,7 @@ export class TopBarComponent implements OnInit {
   logout() {
     alert('That`s sad, you just logged out');
   }
+  
   applyFilter() {}
 
   profile() {

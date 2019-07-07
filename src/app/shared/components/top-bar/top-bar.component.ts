@@ -17,7 +17,7 @@ export class TopBarComponent implements OnInit {
   logout() {
     alert('That`s sad, you just logged out');
   }
-  
+
   applyFilter() {}
 
   profile() {
@@ -29,7 +29,7 @@ export class TopBarComponent implements OnInit {
   }
 
   consultation() {
-    this.router.navigate(['consultation']);
+    this.router.navigate(['in-consultation']);
   }
 
   archive() {

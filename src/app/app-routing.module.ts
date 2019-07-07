@@ -15,6 +15,22 @@ const routes: Routes = [
         loadChildren: './home/home.module#HomeModule',
       },
       {
+        path: 'about',
+        loadChildren: './about/about.module#AboutModule',
+      },
+      {
+        path: 'in-consultation',
+        loadChildren: './in-consultation/in-consultation.module#InConsultationModule',
+      },
+      {
+        path: 'archive',
+        loadChildren: './authentication/authentication.module#AuthenticationModule',
+      },
+      {
+        path: 'members',
+        loadChildren: './authentication/authentication.module#AuthenticationModule',
+      },
+      {
         path: 'authentication',
         loadChildren: './authentication/authentication.module#AuthenticationModule',
       },

@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 
 // modules
 import { SharedModule } from '../shared/shared.module';
-import { HomeRoutingModule } from './home-routing.module';
+import { HelpRoutingModule } from './help-routing.module';
 
 // components
-import { HomeComponent } from './containers/home/home.component';
+import { HelpComponent } from './containers/help/help.component';
 
 @NgModule({
   imports: [
     SharedModule,
-    HomeRoutingModule,
+    HelpRoutingModule,
   ],
   declarations: [
-    HomeComponent,
+    HelpComponent,
   ],
   providers: [],
 })
-export class HomeModule {}
+export class HelpModule {}

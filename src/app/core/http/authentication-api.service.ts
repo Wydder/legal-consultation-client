@@ -5,7 +5,9 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 
-import { AuthenticationService, User } from '@app/core';
+import { AuthenticationService } from '../services';
+
+import { User } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationApiService {

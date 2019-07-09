@@ -9,7 +9,7 @@ export class AuthenticationService {
   }
 
   getCurrentUser() {
-    localStorage.getItem('currentUser');
+    return localStorage.getItem('currentUser');
   }
 
   removeCurrentUser() {

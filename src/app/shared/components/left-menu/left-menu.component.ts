@@ -18,14 +18,14 @@ export class LeftMenuComponent implements OnInit {
   }
 
   dictionaries() {
-    this.router.navigate(['dictionaries']);
+    this.router.navigate(['dictionary']);
   }
 
   settings() {
-    this.router.navigate(['settings']);
+    this.router.navigate(['documents']);
   }
 
   qa() {
-    this.router.navigate(['qa']);
+    this.router.navigate(['help']);
   }
 }

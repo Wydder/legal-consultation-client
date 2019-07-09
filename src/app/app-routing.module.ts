@@ -35,6 +35,18 @@ const routes: Routes = [
         loadChildren: './authentication/authentication.module#AuthenticationModule',
       },
       {
+        path: 'dictionary',
+        loadChildren: './dictionary/dictionary.module#DictionaryModule',
+      },
+      {
+        path: 'documents',
+        loadChildren: './documents/documents.module#DocumentsModule',
+      },
+      {
+        path: 'help',
+        loadChildren: './help/help.module#HelpModule',
+      },
+      {
         path: '**',
         redirectTo: '/home',
       }

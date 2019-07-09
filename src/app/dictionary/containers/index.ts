@@ -1,7 +1,7 @@
-import { HomeComponent } from './home/home.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 export const components: any[] = [
-  HomeComponent,
+  DictionaryComponent,
 ];
 
-export * from './home/home.component';
+export * from './dictionary/dictionary.component';

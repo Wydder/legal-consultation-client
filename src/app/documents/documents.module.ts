@@ -17,4 +17,4 @@ import { DocumentsComponent } from './containers/documents/documents.component';
   ],
   providers: [],
 })
-export class DictionaryModule {}
+export class DocumentsModule {}

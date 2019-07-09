@@ -8,6 +8,10 @@ export class AuthenticationService {
     localStorage.setItem('currentUser', JSON.stringify(user));
   }
 
+  getCurrentUser() {
+    localStorage.getItem('currentUser')
+  }
+
   removeCurrentUser() {
     localStorage.removeItem('currentUser');
   }

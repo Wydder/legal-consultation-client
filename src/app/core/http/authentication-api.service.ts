@@ -27,7 +27,7 @@ export class AuthenticationApiService {
   }
 
   login(loginForm: User) {
-    return this.http.post<any>(`${environment.api_url}/users/authenticate`, { loginForm })
+    return this.http.post<any>(`${environment.api_url}/auth/signin`, { loginForm })
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
@@ -41,7 +41,7 @@ export class AuthenticationApiService {
   }
 
   sigup(signupForm: User) {
-    return this.http.post<any>(`${environment.api_url}/auth/signup/`, { signupForm });
+    return this.http.post<any>(`${environment.api_url}/auth/signup`, { signupForm });
   }
 
   logout() {

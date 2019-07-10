@@ -41,7 +41,7 @@ export class AuthenticationApiService {
   }
 
   sigup(signupForm: User) {
-    return this.http.post<any>(`${environment.api_url}/users/register`, { signupForm });
+    return this.http.post<any>(`${environment.api_url}/auth/signup/`, { signupForm });
   }
 
   logout() {

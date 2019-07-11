@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { environment } from '@env/environment';
+import { environment } from '@env/environment.local';
 
 import { AuthenticationService } from '../services';
 
@@ -27,7 +27,7 @@ export class AuthenticationApiService {
   }
 
   login(loginForm: User) {
-    return this.http.post<any>(`${environment.api_url}/auth/signin`, { loginForm })
+    return this.http.post<any>(`${environment.api_url}/auth/signin`, JSON.stringify(loginForm))
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
@@ -40,8 +40,8 @@ export class AuthenticationApiService {
       }));
   }
 
-  sigup(signupForm: User) {
-    return this.http.post<any>(`${environment.api_url}/auth/signup`, { signupForm });
+  signup(signupForm: User) {
+    return this.http.post<any>(`${environment.api_url}/auth/signup`, JSON.stringify(signupForm));
   }
 
   logout() {

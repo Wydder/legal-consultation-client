@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { environment } from '../environments/environment';
+
+import { HeaderInterceptor } from './interceptors/header.interceptor';
 
 // not used in production
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -21,6 +24,14 @@ import { AppComponent } from './app.component';
 
 export const metaReducers: any[] = !environment.production ? [storeFreeze] : [];
 
+export const httpInterceptorProviders = [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HeaderInterceptor,
+    multi: true
+  },
+];
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -37,6 +48,7 @@ export const metaReducers: any[] = !environment.production ? [storeFreeze] : [];
   bootstrap: [AppComponent],
   providers: [
     ...fromGuards.guards,
+    httpInterceptorProviders
   ],
 })
 export class AppModule {}

@@ -56,7 +56,7 @@ export class SignUpComponent implements OnInit {
     }
 
     const aSignUp = this.newUser;
-    this.authenticationApiService.sigup(aSignUp)
+    this.authenticationApiService.signup(aSignUp)
       .subscribe({
         next: signup => this.router.navigate(['authentication/log-in']),
         error: errors => {

@@ -4,6 +4,7 @@ export interface IUser {
   username: string;
   email: string;
   password: string;
+  organisation: string;
 }
 
 
@@ -13,6 +14,7 @@ export class User {
   username: string;
   email: string;
   password: string;
+  organisation: string;
 
   constructor(aData?: IUser) {
     if (aData) {
@@ -26,6 +28,7 @@ export class User {
     this.username = aJson.username;
     this.email = aJson.email || undefined;
     this.password = aJson.password;
+    this.organisation = aJson.organisation || undefined;
   }
 
   fromForm(aJson: any) {
@@ -34,5 +37,6 @@ export class User {
     this.username = aJson.username;
     this.email = aJson.email;
     this.password = aJson.password;
+    this.organisation = aJson.organisation;
   }
 }

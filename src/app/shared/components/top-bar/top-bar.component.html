@@ -19,18 +19,12 @@
       <button mat-button (click)="archive()" routerLinkActive="active">Arhiva</button>
       <button mat-button (click)="members()" routerLinkActive="active">Membri</button>
       <button mat-button (click)="login()" routerLinkActive="active">Log in</button>
-      <button mat-button [matMenuTriggerFor]="selectLanguage"><span class="flag-icon flag-icon-squared flag-icon-ro"></span></button>
+      <button mat-button [matMenuTriggerFor]="selectLanguage"><span
+        class="flag-icon flag-icon-squared flag-icon-ro"></span></button>
       <mat-menu #selectLanguage="matMenu">
         <button mat-menu-item><span class="flag-icon flag-icon-squared flag-icon-ro"></span></button>
         <button mat-menu-item><span class="flag-icon flag-icon-squared flag-icon-gb"></span></button>
       </mat-menu>
     </mat-toolbar>
-  </div>
-  <div class="search-row" fxLayout="row" fxLayoutAlign="end center">
-    <div class="empty"></div>
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter()" placeholder="Cauta document...">
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
   </div>
 </div>

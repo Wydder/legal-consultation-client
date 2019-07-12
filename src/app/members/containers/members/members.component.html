@@ -1,13 +1,29 @@
-<section id="members-page" class="page-view">
+<section id="members-page" class="page-view" fxLayout="column">
   <mat-toolbar fxLayout="row" fxLayoutAlign="end center" [fxFlex]="60" [fxFlexOffset]="40">
     <mat-form-field>
       <input matInput (keyup)="applyFilter()" placeholder="Cauta document...">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-    <button mat-button>55</button>
-    <button mat-button>55</button>
+    <button mat-button>
+      <fa-icon [icon]="['fas', 'th-large']"></fa-icon>
+    </button>
+    <button mat-button>
+      <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+    </button>
     <button mat-button>
       <i class="material-icons">add_circle</i>Adauga membri
     </button>
   </mat-toolbar>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div class="users-length">
+      <span>1200 total</span>
+    </div>
+    <div class="sort-by">
+      <button mat-button>Nume</button>
+      <button mat-button>Prenume</button>
+      <button mat-button>Organizatie</button>
+      <button mat-button>Judet</button>
+      <button mat-button>Specializare</button>
+    </div>
+  </div>
 </section>

@@ -33,6 +33,11 @@ div#top-bar {
       button {
         border-radius: 0;
         height: 100%;
+        font-family: Titillium Web;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
 
         .flag-icon {
           width: 100%;
@@ -48,15 +53,6 @@ div#top-bar {
       button.mat-button:hover,
       button.mat-button.active {
       }
-    }
-  }
-  .search-row {
-    .empty {
-      flex-grow: 1;
-    }
-    mat-form-field {
-      flex-grow: 1;
-      height: 60px;
     }
   }
 }

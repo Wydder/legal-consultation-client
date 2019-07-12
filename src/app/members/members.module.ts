@@ -8,7 +8,7 @@ import { MembersRoutingModule } from './members-routing.module';
 // Font Awesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faThLarge, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge, faBars, faCircle } from '@fortawesome/free-solid-svg-icons';
 
 // containers
 import * as fromContainers from './containers';
@@ -29,6 +29,6 @@ import * as fromContainers from './containers';
 export class MembersModule {
   constructor() {
     // Add an icon to the library for convenient access in other components
-    library.add(faThLarge, faBars);
+    library.add(faThLarge, faBars, faCircle);
   }
 }

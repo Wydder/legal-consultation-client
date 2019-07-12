@@ -90,10 +90,13 @@ $legal-consult-margin-lg: map-get($spaces, 'lg');
 $legal-consult-margin-xl: map-get($spaces, 'xl');
 
 $legal-consult-header-height: 70px;
-$legal-consult-header-logo-size: 96px;
 $legal-consult-header-user-icon-size: 32px;
+$legal-consult-sidenav-width: 69px;
 
-$legal-consult-sidenav-width: 80px;
+$legal-consult-search-toolbar-height: 57px;
+$legal-consult-search-width-input: 406px;
+$legal-consult-search-width-view-btn: 45px;
+$legal-consult-search-width-add-btn: 214px;
 
 $legal-consult-table-margin: $legal-consult-margin-lg;
 $legal-consult-table-padding: $legal-consult-padding-md;

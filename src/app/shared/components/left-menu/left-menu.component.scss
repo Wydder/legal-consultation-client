@@ -11,16 +11,27 @@ div#left-menu {
 
     button {
       width: 100%;
+      height: $legal-consult-sidenav-width;
       padding-top: $legal-consult-padding-md;
       padding-bottom: $legal-consult-padding-md;
       border-bottom: thin solid map-get($mat-congress-blue, 50);
       border-radius: 0;
-      mat-icon {
-        color: map-get($mat-congress-blue, 50);
-      }
+      background: no-repeat center;
     }
     button:first-child {
       border-top: thin solid map-get($mat-congress-blue, 50);
+    }
+    button.home {
+      background-image: url("../../../../assets/home.png");
+    }
+    button.dictionary {
+      background-image: url("../../../../assets/big-dictionary.png");
+    }
+    button.settings {
+      background-image: url("../../../../assets/three-cogwheels-linked-by-lines-in-triangular-shape.png");
+    }
+    button.help {
+      background-image: url("../../../../assets/question.png");
     }
   }
 }

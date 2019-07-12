@@ -5,11 +5,6 @@ div#top-bar {
   height: $legal-consult-header-height;
   padding-right: $legal-consult-padding-xl;
 
-  img.logo {
-    height: $legal-consult-header-logo-size;
-    width: auto;
-    padding: 0 $legal-consult-padding-lg;
-  }
   .toolbar-row {
     mat-icon {
       height: $legal-consult-header-user-icon-size;
@@ -32,7 +27,7 @@ div#top-bar {
 
       button {
         border-radius: 0;
-        height: 100%;
+        height: $legal-consult-header-height;
         font-family: Titillium Web;
         font-style: normal;
         font-weight: normal;

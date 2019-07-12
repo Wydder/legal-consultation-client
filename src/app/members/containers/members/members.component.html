@@ -1,3 +1,13 @@
 <section id="members-page" class="page-view">
-  <p>Here is the members page</p>
+  <mat-toolbar fxLayout="row" fxLayoutAlign="end center" [fxFlex]="60" [fxFlexOffset]="40">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter()" placeholder="Cauta document...">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <button mat-button>55</button>
+    <button mat-button>55</button>
+    <button mat-button>
+      <i class="material-icons">add_circle</i>Adauga membri
+    </button>
+  </mat-toolbar>
 </section>

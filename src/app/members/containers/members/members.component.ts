@@ -11,4 +11,6 @@ export class MembersComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit() {}
+
+  applyFilter() {}
 }

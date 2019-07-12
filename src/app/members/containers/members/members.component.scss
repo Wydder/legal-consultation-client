@@ -2,4 +2,14 @@
 
 #members-page {
   height: calc(100% - #{$legal-consult-header-height});
+
+  .search-row {
+    .empty {
+      flex-grow: 1;
+    }
+    mat-form-field {
+      flex-grow: 1;
+      height: 60px;
+    }
+  }
 }

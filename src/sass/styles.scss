@@ -2,11 +2,18 @@
 @import '~@angular/material/theming';
 @import '~material-design-icons/iconfont/material-icons.css';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'variables';
 
 // layout
 html, body {
   height : 100%;
+
+  .page-view {
+    padding-right: $legal-consult-margin-lg;
+    padding-left: $legal-consult-margin-lg;
+  }
 }
+
 
 .notification-snackbar {
   color: white;

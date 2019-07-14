@@ -7,8 +7,8 @@ import {
 } from '@angular/core';
 
 export enum MembersView {
-  ListView = 1,
-  BlockView = 2
+  ListView = '100%',
+  BlockView = '40%'
 }
 
 @Component({
@@ -18,22 +18,28 @@ export enum MembersView {
 })
 export class SearchBarComponent implements OnInit, AfterViewInit {
 
-  @Output() blockView: EventEmitter<number> = new EventEmitter();
-  @Output() listView: EventEmitter<number> = new EventEmitter();
+  @Output() blockView: EventEmitter<string> = new EventEmitter();
+  @Output() listView: EventEmitter<string> = new EventEmitter();
+  viewMode: string;
+  constructor() {
+    this.viewMode = MembersView.BlockView.toString();
+  }
 
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.onBlockView();
+  }
 
   ngAfterViewInit() {}
 
   applyFilter() {}
 
   onBlockView() {
+    this.viewMode = MembersView.BlockView.toString();
     this.blockView.emit(MembersView.BlockView);
   }
 
   onListView() {
+    this.viewMode = MembersView.ListView.toString();
     this.listView.emit(MembersView.ListView);
   }
 }

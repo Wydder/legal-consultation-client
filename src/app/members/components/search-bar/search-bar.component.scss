@@ -26,10 +26,11 @@ mat-toolbar {
   button.mat-button.view-btn {
     width: $legal-consult-search-width-view-btn;
     color: map-get($mat-congress-blue, 500);
-  }
-  button.mat-button.view-btn.active {
-    color: map-get($mat-congress-blue, 50);
-    background-color:map-get($mat-congress-blue, 500);
+
+    &.active {
+      color: map-get($mat-congress-blue, 50);
+      background-color:map-get($mat-congress-blue, 500);
+    };
   }
   button.mat-button.view-btn.columns-1 {
     border-radius: 0 $legal-consult-radius-xs $legal-consult-radius-xs 0;

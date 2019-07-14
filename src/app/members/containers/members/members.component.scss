@@ -27,10 +27,12 @@
         button.mat-button {
           fa-icon {
             visibility: hidden;
+            margin: 0 $legal-consult-margin-sm;
           }
 
           &.active {
-            color: #000000;
+            color: map-get($mat-congress-blue, 500);
+            text-decoration: underline;
 
             fa-icon {
               visibility: visible;

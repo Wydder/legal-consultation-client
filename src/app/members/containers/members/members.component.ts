@@ -23,7 +23,7 @@ export class MembersComponent implements OnInit, AfterViewInit {
 
   reverse: boolean;
   order: string;
-  noOfColumns: number;
+  viewMode: string;
   members: any[];
   sortedMembers: any[];
 
@@ -33,7 +33,7 @@ export class MembersComponent implements OnInit, AfterViewInit {
   ) {
     this.order = OrderBy.Name.toString();
     this.reverse = false;
-    this.noOfColumns = 2;
+    this.viewMode = '40%';
     this.members = this.getUsers();
   }
 
@@ -57,11 +57,11 @@ export class MembersComponent implements OnInit, AfterViewInit {
   }
 
   onBlockView(blockView) {
-    this.noOfColumns = blockView;
+    this.viewMode = blockView;
   }
 
   onListView(listView) {
-    this.noOfColumns = listView;
+    this.viewMode = listView;
   }
 
   viewMemberProfile(member: any) {
@@ -108,7 +108,7 @@ export class MembersComponent implements OnInit, AfterViewInit {
       {
         id: 6,
         email: 'wbsdf@gsdf.com',
-        name: 'sebebsdfe',
+        name: 'jsebebsdfe',
         telephone: '0729171656',
         organisation: 'acsdfhech',
       },

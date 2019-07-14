@@ -3,10 +3,16 @@
     <mat-icon>search</mat-icon>
     <input (keyup)="applyFilter()" placeholder="Cauta membru...">
   </div>
-  <button mat-button class="view-btn columns-2 mat-elevation-z1" (click)="onBlockView()">
+  <button mat-button
+          class="view-btn columns-2 mat-elevation-z1"
+          [class.active]="viewMode === '40%'"
+          (click)="onBlockView()">
     <fa-icon [icon]="['fas', 'th-large']"></fa-icon>
   </button>
-  <button mat-button class="view-btn columns-1 mat-elevation-z1" (click)="onListView()">
+  <button mat-button
+          class="view-btn columns-1 mat-elevation-z1"
+          [class.active]="viewMode === '100%'"
+          (click)="onListView()">
     <fa-icon [icon]="['fas', 'bars']"></fa-icon>
   </button>
   <button mat-button class="add-member">

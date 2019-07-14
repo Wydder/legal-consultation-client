@@ -8,7 +8,7 @@
     <div class="grid-header" fxLayout="row" fxLayoutAlign="center center">
       <div class="users-length">
         <span>
-          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> 1200 total
+          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> {{ members.length }} total
         </span>
       </div>
       <div class="sort">
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="grid-list">
-      <div class="user-card" *ngFor="let member of members | orderBy: order:reverse:'case-insensitive'">
+      <div class="user-card" [style.flex-basis]="viewMode" *ngFor="let member of members | orderBy: order:reverse:'case-insensitive'">
         <div class="user-info">
           <p class="name-pragraph">
             <span class="specialisaion"></span>

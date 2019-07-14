@@ -8,10 +8,21 @@ import { MembersRoutingModule } from './members-routing.module';
 // Font Awesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faThLarge, faBars, faCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faThLarge,
+  faBars,
+  faCircle,
+  faSortDown,
+  faSortUp,
+  faEnvelope,
+  faMobileAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 // containers
 import * as fromContainers from './containers';
+
+// components
+import * as fromComponents from './components';
 
 @NgModule({
   imports: [
@@ -22,13 +33,21 @@ import * as fromContainers from './containers';
   ],
   declarations: [
     ...fromContainers.components,
+    ...fromComponents.components
   ],
   providers: [
   ],
 })
 export class MembersModule {
   constructor() {
-    // Add an icon to the library for convenient access in other components
-    library.add(faThLarge, faBars, faCircle);
+    library.add(
+      faThLarge,
+      faBars,
+      faCircle,
+      faSortDown,
+      faSortUp,
+      faEnvelope,
+      faMobileAlt
+    );
   }
 }

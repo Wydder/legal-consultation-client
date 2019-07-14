@@ -22,7 +22,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MAT_DATE_FORMATS,
-  MAT_DATE_LOCALE
+  MAT_DATE_LOCALE, MatGridListModule
 } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
@@ -32,6 +32,7 @@ const modules = [
   MatCardModule,
   MatDatepickerModule,
   MatDialogModule,
+  MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatListModule,

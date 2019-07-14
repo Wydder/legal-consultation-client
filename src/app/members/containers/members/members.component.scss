@@ -3,37 +3,80 @@
 #members-page {
   height: calc(100% - #{$legal-consult-header-height});
 
-  mat-toolbar {
-    mat-form-field {
-      height: $legal-consult-search-toolbar-height;
-      width: $legal-consult-search-width-input;
-    }
+  .members-grid {
+    margin: 0 15%;
 
-    button {
-      height: $legal-consult-search-toolbar-height;
-
-      .view-btn {
-        width: $legal-consult-search-width-view-btn;
-      }
-      .add-member {
-        width: $legal-consult-search-width-add-btn;
-      }
-    }
-  }
-
-  .sorting-header {
-    .users {
-      fa-icon {
+    .grid-header {
+      font-family: Open Sans;
+      font-weight: 600;
+      font-size: $legal-consult-font-size-sm;
+      margin: $legal-consult-margin-xl 0;
+      .circle-list {
         font-size: 5px;
         text-align: center;
         vertical-align: middle;
       }
+      .users-length {
+
+        span {
+          margin-right: $legal-consult-margin-xl;
+        }
+      }
     }
 
-    .users.length {
-      span {
-        margin-right: $legal-consult-margin-xl;
+    .grid-list {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: $legal-consult-margin-xl $legal-consult-margin-xl;
+
+      .user-card {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: $legal-consult-padding-xl $legal-consult-padding-lg $legal-consult-padding-xl $legal-consult-padding-xl;
+
+        .user-info {
+
+          .name-pragraph {
+            font-family: Open Sans;
+            font-size: $legal-consult-font-size-lg;
+            margin-bottom: $legal-consult-margin-lg;
+          }
+
+          .info {
+            font-family: Titillium Web;
+            font-size: $legal-consult-font-size-sm;
+            margin-top: 0px;
+          }
+          .info.email {
+            margin-bottom: $legal-consult-margin-sm;
+          }
+          .info.phone {
+            margin: 0 $legal-consult-margin-sm $legal-consult-margin-lg $legal-consult-margin-xs;
+          }
+          .info.organisation {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+            color: map-get($mat-congress-blue, 500);
+          }
+        }
+      }
+
+      .user-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        button {
+          justify-content: flex-end;
+          width: $legal-consult-view-user-profile-btn-width;
+          height: $legal-consult-view-user-profile-btn-height;
+          font-family: Open Sans;
+          font-size: $legal-consult-font-size-sm;
+        }
       }
     }
   }
+
 }

@@ -8,6 +8,16 @@
 html, body {
   height : 100%;
 
+  button,
+  button[mat-button],
+  input,
+  span {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    border-radius: $legal-consult-radius-xs!important;
+  }
+
   .page-view {
     padding-right: $legal-consult-margin-lg;
     padding-left: $legal-consult-margin-lg;

@@ -4,7 +4,7 @@
 div#left-menu {
   width: $legal-consult-sidenav-width;
   height: 100%;
-  background-color : map-get($mat-congress-blue, A300);
+  background-color : $legal-consult-sidenav-background-color;
 
   .left-menu-column {
     height: 100%;
@@ -14,12 +14,12 @@ div#left-menu {
       height: $legal-consult-sidenav-width;
       padding-top: $legal-consult-padding-md;
       padding-bottom: $legal-consult-padding-md;
-      border-bottom: thin solid map-get($mat-congress-blue, 50);
+      border-bottom: thin solid map-get($mat-white, 50);
       border-radius: 0;
       background: no-repeat center;
     }
     button:first-child {
-      border-top: thin solid map-get($mat-congress-blue, 50);
+      border-top: thin solid map-get($mat-white, 50);
     }
     button.home {
       background-image: url("../../../../assets/home.png");

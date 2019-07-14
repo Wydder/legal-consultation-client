@@ -1,34 +1,87 @@
 <section id="members-page" class="page-view" fxLayout="column">
-  <mat-toolbar fxLayout="row" fxLayoutAlign="end center">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter()" placeholder="Cauta membru...">
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
-    <button class="view-btn" mat-button>
-      <fa-icon [icon]="['fas', 'th-large']"></fa-icon>
-    </button>
-    <button class="view-btn" mat-button>
-      <fa-icon [icon]="['fas', 'bars']"></fa-icon>
-    </button>
-    <button class="add-member" mat-button>
-      <i class="material-icons">add_circle</i> Adauga membri
-    </button>
-  </mat-toolbar>
-  <div class="sorting-header" fxLayout="row" fxLayoutAlign="center center" >
-    <div class="users length">
-      <span>
-        <fa-icon [icon]="['fas', 'circle']"></fa-icon> 1200 total
-      </span>
+
+  <app-search-bar (blockView)="onBlockView($event)"
+                  (listView)="onListView($event)">
+  </app-search-bar>
+
+  <div class="members-grid">
+    <div class="grid-header" fxLayout="row" fxLayoutAlign="center center">
+      <div class="users-length">
+        <span>
+          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> 1200 total
+        </span>
+      </div>
+      <div class="sort">
+        <span>
+          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> Sorteaza dupa:
+        </span>
+        <button mat-button>
+          Nume
+          <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-down']"></fa-icon>
+          <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-up']"></fa-icon>
+        </button>
+        <button mat-button>
+          Prenume
+          <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
+          <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
+        </button>
+        <button mat-button>
+          Organizatie
+          <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
+          <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
+        </button>
+        <button mat-button>
+          Judet
+          <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
+          <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
+        </button>
+        <button mat-button>
+          Specializare
+          <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
+          <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
+        </button>
+      </div>
     </div>
-    <div class="users sort">
-      <span>
-        <fa-icon [icon]="['fas', 'circle']"></fa-icon> Sorteaza dupa:
-      </span>
-      <button mat-button>Nume</button>
-      <button mat-button>Prenume</button>
-      <button mat-button>Organizatie</button>
-      <button mat-button>Judet</button>
-      <button mat-button>Specializare</button>
+    <div class="grid-list">
+      <div class="user-card" *ngFor="let user of users">
+        <div class="user-info">
+          <p class="name-pragraph">
+            <span class="specialisaion"></span>
+            <span class="last-name"> {{ user.name }} </span>
+            <span class="first-name"></span>
+          </p>
+
+          <p class="info email">
+            <fa-icon [hidden]="reverse" [icon]="['fas', 'envelope']"></fa-icon>
+            {{ user.email }}
+          </p>
+
+          <p class="info phone">
+            <fa-icon [hidden]="reverse" [icon]="['fas', 'mobile-alt']"></fa-icon>
+            {{ user.id }}
+          </p>
+
+          <p class="info organisation">
+            {{ user.organisation }}
+          </p>
+        </div>
+        <div class="user-actions">
+          <button mat-raised-button
+                  color="primary"
+                  class="mat-elevation-z0"
+                  (click)="viewUserProfile(user.id)">
+
+            Vezi profil
+          </button>
+        </div>
+
+      </div>
+      <!--<mat-grid-list *ngIf="test === 1" cols="1" rowHeight="2:1">-->
+      <!--<mat-grid-tile>1</mat-grid-tile>-->
+      <!--<mat-grid-tile>2</mat-grid-tile>-->
+      <!--<mat-grid-tile>3</mat-grid-tile>-->
+      <!--<mat-grid-tile>4</mat-grid-tile>-->
+      <!--</mat-grid-list>-->
     </div>
   </div>
 </section>

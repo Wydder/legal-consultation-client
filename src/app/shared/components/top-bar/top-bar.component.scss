@@ -8,6 +8,7 @@ div#top-bar {
   .toolbar-row {
     mat-icon {
       height: $legal-consult-header-user-icon-size;
+      color: map-get($mat-congress-blue, 500);
       width: $legal-consult-header-user-icon-size;
       font-size: $legal-consult-header-user-icon-size;
       margin: $legal-consult-margin-md;
@@ -19,7 +20,7 @@ div#top-bar {
       font-weight: bold;
     }
     span.name {
-      color: map-get($mat-congress-blue, 700);
+      color: map-get($mat-congress-blue, 500);
     }
 
     mat-toolbar {
@@ -31,8 +32,7 @@ div#top-bar {
         font-family: Titillium Web;
         font-style: normal;
         font-weight: normal;
-        font-size: 12px;
-        line-height: 18px;
+        font-size: $legal-consult-font-size-xs;
 
         .flag-icon {
           width: 100%;

@@ -20,7 +20,9 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
 
   @Output() blockView: EventEmitter<string> = new EventEmitter();
   @Output() listView: EventEmitter<string> = new EventEmitter();
+
   viewMode: string;
+
   constructor() {
     this.viewMode = MembersView.BlockView.toString();
   }
@@ -31,15 +33,23 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {}
 
-  applyFilter() {}
-
   onBlockView() {
     this.viewMode = MembersView.BlockView.toString();
-    this.blockView.emit(MembersView.BlockView);
+    const theViewMode = this.viewMode;
+
+    this.blockView.emit(theViewMode);
   }
 
   onListView() {
     this.viewMode = MembersView.ListView.toString();
-    this.listView.emit(MembersView.ListView);
+    const theViewMode = this.viewMode;
+
+    this.listView.emit(theViewMode);
+  }
+
+  applyFilter() {}
+
+  get membersView() {
+    return MembersView;
   }
 }

@@ -108,6 +108,8 @@ $legal-consult-font-size-md: map-get($font-sizes, 'md');
 $legal-consult-font-size-lg: map-get($font-sizes, 'lg');
 $legal-consult-font-size-xl: map-get($font-sizes, 'xl');
 
+$legal-consult-inactive-text: #7C8284;
+
 // Shared module
 $legal-consult-header-height: 70px;
 $legal-consult-header-user-icon-size: 32px;

@@ -33,7 +33,6 @@ export class MembersComponent implements OnInit, AfterViewInit {
   ) {
     this.order = OrderBy.Name.toString();
     this.reverse = false;
-    this.viewMode = '40%';
     this.members = this.getUsers();
   }
 
@@ -66,6 +65,10 @@ export class MembersComponent implements OnInit, AfterViewInit {
 
   viewMemberProfile(member: any) {
     this.router.navigate(['/members/member-profile', member.id]);
+  }
+
+  get orderBy() {
+    return OrderBy;
   }
 
   getUsers() {

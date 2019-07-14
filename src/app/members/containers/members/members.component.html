@@ -16,35 +16,35 @@
           <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> Sorteaza dupa:
         </span>
         <button mat-button
-                [class.active]="order === 'name'"
+                [class.active]="order === orderBy.Name.toString()"
                 (click)="setOrder('name')">
           Nume
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
-                [class.active]="order === 'firstName'"
+                [class.active]="order === orderBy.FirstName.toString()"
                 (click)="setOrder('firstName')">
           Prenume
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
-                [class.active]="order === 'organisation'"
+                [class.active]="order === orderBy.Organisation.toString()"
                 (click)="setOrder('organisation')">
           Organizatie
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
-                [class.active]="order === 'county'"
+                [class.active]="order === orderBy.County.toString()"
                 (click)="setOrder('county')">
           Judet
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
-                [class.active]="order === 'specialisation'"
+                [class.active]="order === orderBy.Specialisation.toString()"
                 (click)="setOrder('specialisation')">
           Specializare
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>

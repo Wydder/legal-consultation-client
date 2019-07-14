@@ -25,6 +25,10 @@
 
       .sort {
         button.mat-button {
+          color: $legal-consult-inactive-text;
+          span {
+
+          }
           fa-icon {
             visibility: hidden;
             margin: 0 $legal-consult-margin-sm;
@@ -52,7 +56,6 @@
 
       .user-card {
         display: grid;
-        flex-basis: 40%;
         grid-template-columns: auto auto;
         padding: $legal-consult-padding-xl $legal-consult-padding-lg $legal-consult-padding-xl $legal-consult-padding-xl;
 

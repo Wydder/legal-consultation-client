@@ -1,5 +1,18 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { OrderPipe } from 'ngx-order-pipe';
+
 import { User } from '@app/core';
+
+export enum OrderBy {
+  Name = 'name',
+  Email = 'email',
+  FirstName = 'firstName',
+  Organisation = 'organisation',
+  Specialisation = 'specialisation',
+  County = 'county',
+}
 
 @Component({
   selector: 'app-members',
@@ -11,18 +24,37 @@ export class MembersComponent implements OnInit, AfterViewInit {
   reverse: boolean;
   order: string;
   noOfColumns: number;
-  users: any[];
+  members: any[];
+  sortedMembers: any[];
 
-  constructor() {
-    this.order = 'info.name';
+  constructor(
+    private router: Router,
+    private orderPipe: OrderPipe
+  ) {
+    this.order = OrderBy.Name.toString();
     this.reverse = false;
     this.noOfColumns = 2;
-    this.users = this.getUsers();
+    this.members = this.getUsers();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const theMembers = this.members;
+    const theOrder = this.order;
+
+    this.sortedMembers = this.orderPipe.transform(theMembers, theOrder);
+  }
 
   ngAfterViewInit() {}
+
+  setOrder(orderBy: string) {
+
+    const theOrderBy = this.order;
+    if (theOrderBy === orderBy) {
+      this.reverse = !this.reverse;
+    }
+
+    this.order = orderBy;
+  }
 
   onBlockView(blockView) {
     this.noOfColumns = blockView;
@@ -32,41 +64,53 @@ export class MembersComponent implements OnInit, AfterViewInit {
     this.noOfColumns = listView;
   }
 
-  viewUserProfile(id) {
-    console.log(id);
+  viewMemberProfile(member: any) {
+    this.router.navigate(['/members/member-profile', member.id]);
   }
 
   getUsers() {
     return [
       {
         id: 1,
-        email: 'basd@asdg.com',
+        email: 'sbasd@asdg.com',
         name: 'beasdbe',
-        organisation: 'chasdech',
+        telephone: '0739171656',
+        organisation: 'schasdech',
       },
       {
         id: 2,
         email: 'adb@dag.com',
-        name: 'bedaadbe',
-        organisation: 'chsech',
+        name: 'abedaadbe',
+        telephone: '0759171656',
+        organisation: 'bchsech',
       },
       {
         id: 3,
-        email: 'bfs@fsg.com',
-        name: 'bedasbe',
-        organisation: 'chech',
+        email: 'gbfs@fsg.com',
+        name: 'hbedasbe',
+        telephone: '0769171656',
+        organisation: 'vchech',
       },
       {
         id: 4,
-        email: 'bsf@sfg.com',
-        name: 'beasdbe',
-        organisation: 'chech',
+        email: 'ybsf@sfg.com',
+        name: 'jbeasdbe',
+        telephone: '0779171656',
+        organisation: 'trchech',
       },
       {
         id: 5,
-        email: 'bsdf@gsdf.com',
-        name: 'bebsdfe',
-        organisation: 'csdfhech',
+        email: 'wbsdf@gsdf.com',
+        name: 'sebebsdfe',
+        telephone: '0739171656',
+        organisation: 'acsdfhech',
+      },
+      {
+        id: 6,
+        email: 'wbsdf@gsdf.com',
+        name: 'sebebsdfe',
+        telephone: '0729171656',
+        organisation: 'acsdfhech',
       },
     ];
   }

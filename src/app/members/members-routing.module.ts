@@ -9,6 +9,10 @@ const routes: Routes = [
     path: '',
     component: fromContainers.MembersComponent,
   },
+  {
+    path: 'member-profile/:memberId',
+    component: fromContainers.MemberProfileComponent,
+  },
 ];
 
 @NgModule({

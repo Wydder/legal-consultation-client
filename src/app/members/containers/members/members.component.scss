@@ -22,15 +22,35 @@
           margin-right: $legal-consult-margin-xl;
         }
       }
+
+      .sort {
+        button.mat-button {
+          fa-icon {
+            visibility: hidden;
+          }
+
+          &.active {
+            color: #000000;
+
+            fa-icon {
+              visibility: visible;
+            }
+          }
+        }
+      }
     }
 
     .grid-list {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-gap: $legal-consult-margin-xl $legal-consult-margin-xl;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: $legal-consult-margin-xl;
 
       .user-card {
         display: grid;
+        flex-basis: 40%;
         grid-template-columns: auto auto;
         padding: $legal-consult-padding-xl $legal-consult-padding-lg $legal-consult-padding-xl $legal-consult-padding-xl;
 

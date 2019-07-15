@@ -67,7 +67,6 @@ export class SignUpComponent implements OnInit {
           }
         }
       });
-
   }
 
   onCancel() {

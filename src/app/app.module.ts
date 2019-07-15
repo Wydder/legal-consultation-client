@@ -48,7 +48,7 @@ export const httpInterceptorProviders = [
   bootstrap: [AppComponent],
   providers: [
     ...fromGuards.guards,
-    httpInterceptorProviders
+    // httpInterceptorProviders
   ],
 })
 export class AppModule {}

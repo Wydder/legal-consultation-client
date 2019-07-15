@@ -7,7 +7,7 @@ import { environment } from '@env/environment.local';
 
 import { AuthenticationService } from '../services';
 
-import { User } from '../models';
+import { User, UserRequest } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationApiService {
@@ -40,8 +40,8 @@ export class AuthenticationApiService {
       }));
   }
 
-  signup(signupForm: User) {
-    return this.http.post<any>(`${environment.api_url}/auth/signup`, JSON.stringify(signupForm));
+  signup(signupForm: UserRequest) {
+    return this.http.post<UserRequest>(`${environment.api_url}/auth/signup`, signupForm);
   }
 
   logout() {

@@ -8,7 +8,7 @@ import { environment } from '@env/environment';
 
 import { AuthenticationService } from '../services';
 
-import { User, UserRequest } from '../models';
+import { LoginRequest, User, UserRequest } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationApiService {
@@ -27,17 +27,17 @@ export class AuthenticationApiService {
     return this.currentUserSubject.value;
   }
 
-  login(loginForm: User) {
-    return this.http.post<any>(`${environment.api_url}/auth/signin`, JSON.stringify(loginForm))
-      .pipe(map(user => {
+  login(loginRequest: LoginRequest) {
+    return this.http.post<LoginRequest>(`${environment.api_url}/auth/signin`, loginRequest)
+      .pipe(map((auth: any) => {
         // login successful if there's a jwt token in the response
-        if (user && user.token) {
-          // store user details and jwt token in local storage to keep user logged in between page refreshes
-          this.authenticationService.setCurrentUser(user);
-          this.currentUserSubject.next(user);
+        if (auth && auth.token) {
+          // store auth details and jwt token in local storage to keep user logged in between page refreshes
+          this.authenticationService.setCurrentUser(auth);
+          this.currentUserSubject.next(auth);
         }
 
-        return user;
+        return auth;
       }));
   }
 

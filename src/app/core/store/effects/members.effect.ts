@@ -4,53 +4,35 @@ import { of } from 'rxjs';
 import { catchError, map, mapTo, switchMap } from 'rxjs/operators';
 
 // model
-import { StorageSpace } from '../../models';
+import { Member } from '../../models';
 
 // services
-import { StorageSpacesService } from '../../services';
+import { MembersService } from '../../services';
 
 // actions
-import * as assetPropertiesActions from '../actions/asset-properties.action';
-import * as loadingActions from '../actions/loading.action';
-import * as storageSpaceActions from '../actions/storage-spaces.action';
+import * as memberActions from '../actions/members.action';
 
 @Injectable()
-export class StorageSpacesEffects {
+export class MembersEffects {
 
   @Effect()
-  loadStorageSpaces$ = this.actions$
+  loadMembers$ = this.actions$
     .pipe(
-    ofType(storageSpaceActions.StorageSpaceActionTypes.LoadStorageSpaces),
+    ofType(memberActions.MemberActionTypes.LoadMembers),
     switchMap(() => {
       return this.storageSpaceService
         .list()
         .pipe(
-          map(aStorageSpaces => new storageSpaceActions.LoadStorageSpacesSuccess(aStorageSpaces)),
-          catchError(error => of(new storageSpaceActions.LoadStorageSpacesFail(error)))
+          map(aMembers => new memberActions.LoadMembersSuccess(aMembers)),
+          catchError(error => of(new memberActions.LoadMembersFail(error)))
         )
       })
     );
 
   @Effect()
-  createStorageSpace$ = this.actions$
-    .pipe(
-      ofType(storageSpaceActions.StorageSpaceActionTypes.CreateStorageSpace),
-      map((action: storageSpaceActions.CreateStorageSpace) => action.payload),
-      map(aPayload => new storageSpaceActions.CreateStorageSpaceSuccess(aPayload))
-    );
-
-  @Effect()
-  createStorageSpaceSuccess$ = this.actions$
-    .pipe(
-      ofType(storageSpaceActions.StorageSpaceActionTypes.CreateStorageSpaceSuccess),
-      map((action: storageSpaceActions.CreateStorageSpaceSuccess) => action.payload),
-      map((aStorageSpace: StorageSpace) => new assetPropertiesActions.DeleteProperty(aStorageSpace.getAsset().id))
-    );
-
-  @Effect()
   showLoading$ = this.actions$
     .pipe(
-      ofType(storageSpaceActions.StorageSpaceActionTypes.LoadStorageSpaces),
+      ofType(memberActions.MemberActionTypes.LoadMembers),
       mapTo(new loadingActions.ShowLoading())
     );
 
@@ -58,15 +40,15 @@ export class StorageSpacesEffects {
   hideLoading$ = this.actions$
     .pipe(
       ofType(
-        storageSpaceActions.StorageSpaceActionTypes.LoadStorageSpacesFail,
-        storageSpaceActions.StorageSpaceActionTypes.LoadStorageSpacesSuccess
+        memberActions.MemberActionTypes.LoadMembersFail,
+        memberActions.MemberActionTypes.LoadMembersSuccess
       ),
       mapTo(new loadingActions.HideLoading())
     );
 
   constructor(
     private actions$: Actions,
-    private storageSpaceService: StorageSpacesService
+    private storageSpaceService: MembersService
   ) {
   }
 }

@@ -3,3 +3,4 @@
 
 // single models
 export * from './user.model';
+export * from './member.model';

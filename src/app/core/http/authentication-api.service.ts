@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { environment } from '@env/environment.local';
 
 import { AuthenticationService } from '../services';
 
+// modules
+import { CoreModule } from '../core.module';
+
+// models
 import { User } from '../models';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthenticationApiService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
   constructor(
+    private authenticationService: AuthenticationService,
     private http: HttpClient,
-    private authenticationService: AuthenticationService
   ) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(this.authenticationService.getCurrentUser()));
     this.currentUser = this.currentUserSubject.asObservable();

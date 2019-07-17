@@ -1,36 +1,36 @@
 import { createSelector } from '@ngrx/store';
 
-import { StorageSpace } from '../../models';
+import { Member } from '@app/core/models';
 import * as fromFeature from '../reducers';
-import * as fromStorageSpaces from '../reducers/storage-spaces.reducer';
+import * as fromMembers from '../reducers/members.reducer';
 
-export const getStorageSpaceState = createSelector(
+export const getMemberState = createSelector(
   fromFeature.getCoreState,
-  (state: fromFeature.CoreState) => state.storageSpaces
+  (state: fromFeature.CoreState) => state.members
 );
 
-const getStorageSpacesEntitiesAsInterfaces = createSelector(getStorageSpaceState, fromStorageSpaces.getStorageSpacesEntities);
-export const getStorageSpacesEntities = createSelector(
-  getStorageSpacesEntitiesAsInterfaces,
+const getMembersEntitiesAsInterfaces = createSelector(getMemberState, fromMembers.getMembersEntities);
+export const getMembersEntities = createSelector(
+  getMembersEntitiesAsInterfaces,
   (aEntities) => {
-    const theStorageSpaces = Object.assign({}, aEntities);
-    const theResult: { [id: number]: StorageSpace } = {};
+    const theMembers = Object.assign({}, aEntities);
+    const theResult: { [id: number]: Member } = {};
 
-    Object.keys(theStorageSpaces).map((aKey) => {
-      theResult[aKey] = new StorageSpace(theStorageSpaces[aKey]);
+    Object.keys(theMembers).map((aKey) => {
+      theResult[aKey] = new Member(theMembers[aKey]);
     });
 
     return theResult;
   }
 );
 
-export const getAllStorageSpaces = createSelector(getStorageSpacesEntities, (entities) => {
+export const getAllMembers = createSelector(getMembersEntities, (entities) => {
   return Object.keys(entities).map(id => entities[parseInt(id, 10)]);
 });
 
-export const getStorageSpacesLoaded = createSelector(getStorageSpaceState, fromStorageSpaces.getStorageSpacesLoaded);
-export const getStorageSpacesLoading = createSelector(getStorageSpaceState, fromStorageSpaces.getStorageSpacesLoading);
-export const getStorageSpaceById = (aStorageSpaceId: number) => createSelector(
-  getStorageSpacesEntities,
-  (entities) => entities[aStorageSpaceId] || undefined
+export const getMembersLoaded = createSelector(getMemberState, fromMembers.getMembersLoaded);
+export const getMembersLoading = createSelector(getMemberState, fromMembers.getMembersLoading);
+export const getMemberById = (aMemberId: number) => createSelector(
+  getMembersEntities,
+  (entities) => entities[aMemberId] || undefined
 );

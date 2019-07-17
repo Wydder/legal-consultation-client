@@ -1,13 +1,13 @@
-import { IStorageSpace, StorageSpace } from '../../models';
-import * as fromStorageSpaces from '../actions/storage-spaces.action';
+import { IMember, Member } from '@app/core/models';
+import * as fromMembers from '@app/core/store/actions/members.action';
 
-export interface StorageSpaceState {
-  entities: { [id: number]: IStorageSpace };
+export interface MemberState {
+  entities: { [id: number]: IMember };
   loaded: boolean;
   loading: boolean;
 }
 
-export const initialState: StorageSpaceState = {
+export const initialState: MemberState = {
   entities: {},
   loaded: false,
   loading: false,
@@ -15,23 +15,23 @@ export const initialState: StorageSpaceState = {
 
 export function reducer(
   state = initialState,
-  action: fromStorageSpaces.StorageSpacesAction
-): StorageSpaceState {
+  action: fromMembers.MembersAction
+): MemberState {
 
   switch (action.type) {
-    case fromStorageSpaces.StorageSpaceActionTypes.LoadStorageSpaces: {
+    case fromMembers.MemberActionTypes.LoadMembers: {
       return {
         ...state,
         loading: true,
-      } as StorageSpaceState;
+      } as MemberState;
     }
 
-    case fromStorageSpaces.StorageSpaceActionTypes.LoadStorageSpacesSuccess: {
-      const theStorageSpaces = action.payload;
-      const entities = theStorageSpaces.reduce((aEntities: { [id: number]: StorageSpace }, aStorageSpace: StorageSpace) => {
+    case fromMembers.MemberActionTypes.LoadMembersSuccess: {
+      const theMembers = action.payload;
+      const entities = theMembers.reduce((aEntities: { [id: number]: Member }, aMember: Member) => {
         return {
           ...aEntities,
-          [aStorageSpace.id]: aStorageSpace.toJson(),
+          [aMember.id]: aMember.toJson(),
         };
       }, {
           ...state.entities,
@@ -45,34 +45,22 @@ export function reducer(
       };
     }
 
-    case fromStorageSpaces.StorageSpaceActionTypes.LoadStorageSpacesFail: {
+    case fromMembers.MemberActionTypes.LoadMembersFail: {
       return {
         ...state,
         loading: false,
         loaded: false,
-      } as StorageSpaceState;
-    }
-
-    case fromStorageSpaces.StorageSpaceActionTypes.CreateStorageSpaceSuccess: {
-      const theStorageSpace = action.payload as StorageSpace;
-      const entities = {
-        ...state.entities,
-        [theStorageSpace.id]: theStorageSpace.toJson(),
-      };
-      return {
-        ...state,
-        entities,
-      } as StorageSpaceState;
+      } as MemberState;
     }
 
     default: {
       return {
         ...state,
-      } as StorageSpaceState;
+      } as MemberState;
     }
   }
 }
 
-export const getStorageSpacesEntities = (state: StorageSpaceState) => state.entities;
-export const getStorageSpacesLoading = (state: StorageSpaceState) => state.loading;
-export const getStorageSpacesLoaded = (state: StorageSpaceState) => state.loaded;
+export const getMembersEntities = (state: MemberState) => state.entities;
+export const getMembersLoading = (state: MemberState) => state.loading;
+export const getMembersLoaded = (state: MemberState) => state.loaded;

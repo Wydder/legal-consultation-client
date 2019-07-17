@@ -1,52 +1,30 @@
-import { Action } from '@ngrx/store';
-import { StorageSpace } from '../../models';
+import { createAction, props, Action } from '@ngrx/store';
+import { Member } from '../../models';
 
-export enum StorageSpaceActionTypes {
-  CreateStorageSpace = '[Storage Spaces] Create Storage Space',
-  CreateStorageSpaceFail = '[Storage Spaces] Create Storage Space Fail',
-  CreateStorageSpaceSuccess = '[Storage Spaces] Create Storage Space Success',
-  LoadStorageSpaces = '[Storage Spaces] Load Storage Spaces',
-  LoadStorageSpacesFail = '[Storage Spaces] Load Storage Spaces Fail',
-  LoadStorageSpacesSuccess = '[Storage Spaces] Load Storage Spaces Success',
+export enum MemberActionTypes {
+  LoadMembers = '[Members] Load Members',
+  LoadMembersFail = '[Members] Load Members Fail',
+  LoadMembersSuccess = '[Members] Load Members Success',
 }
 
-// load storage spaces
-export class LoadStorageSpaces implements Action {
-  readonly type: string = StorageSpaceActionTypes.LoadStorageSpaces;
+// load members
+export class LoadMembers implements Action {
+  readonly type: string = MemberActionTypes.LoadMembers;
   constructor(public payload?: any) {}
 }
 
-export class LoadStorageSpacesFail implements Action {
-  readonly type: string = StorageSpaceActionTypes.LoadStorageSpacesFail;
+export class LoadMembersFail implements Action {
+  readonly type = MemberActionTypes.LoadMembersFail;
   constructor(public payload: any) {}
 }
 
-export class LoadStorageSpacesSuccess implements Action {
-  readonly type: string = StorageSpaceActionTypes.LoadStorageSpacesSuccess;
-  constructor(public payload: StorageSpace[]) {}
-}
-
-// create storage space
-export class CreateStorageSpace implements Action {
-  readonly type: string = StorageSpaceActionTypes.CreateStorageSpace;
-  constructor(public payload: StorageSpace) {}
-}
-
-export class CreateStorageSpaceFail implements Action {
-  readonly type: string = StorageSpaceActionTypes.CreateStorageSpaceFail;
-  constructor(public payload: any) {}
-}
-
-export class CreateStorageSpaceSuccess implements Action {
-  readonly type: string = StorageSpaceActionTypes.CreateStorageSpaceSuccess;
-  constructor(public payload: StorageSpace) {}
+export class LoadMembersSuccess implements Action {
+  readonly type: string = MemberActionTypes.LoadMembersSuccess;
+  constructor(public payload: Member[]) {}
 }
 
 // action types
-export type StorageSpacesAction =
-  CreateStorageSpace
-  | CreateStorageSpaceFail
-  | CreateStorageSpaceSuccess
-  | LoadStorageSpaces
-  | LoadStorageSpacesFail
-  | LoadStorageSpacesSuccess;
+export type MembersAction =
+  LoadMembers
+  | LoadMembersFail
+  | LoadMembersSuccess;

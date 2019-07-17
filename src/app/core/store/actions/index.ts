@@ -1,1 +1,1 @@
-export const actions: any[] = [];
+export * from './members.action';

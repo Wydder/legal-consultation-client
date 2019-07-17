@@ -1,9 +1,12 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import * as fromStore from '@app/core/store';
+import { select, Store } from '@ngrx/store';
+
 import { OrderPipe } from 'ngx-order-pipe';
 
-import { User } from '@app/core';
+import { User, Member } from '@app/core';
 
 export enum OrderBy {
   Name = 'name',
@@ -21,29 +24,42 @@ export enum OrderBy {
 })
 export class MembersComponent implements OnInit, AfterViewInit {
 
-  reverse: boolean;
-  order: string;
-  viewMode: string;
-  members: any[];
-  sortedMembers: any[];
+  private reverse: boolean;
+  private order: string;
+  private viewMode: string;
+  public members: Member[];
+  public sortedMembers: Member[];
 
   constructor(
     private router: Router,
-    private orderPipe: OrderPipe
+    private orderPipe: OrderPipe,
+    private store: Store<fromStore.MemberState>,
   ) {
-    this.order = OrderBy.Name.toString();
+    this.order = OrderBy.Name;
     this.reverse = false;
-    this.members = this.getUsers();
+    this.members = [];  
   }
 
   ngOnInit() {
+    this.refresh();
+  }
+
+  ngAfterViewInit() {
     const theMembers = this.members;
     const theOrder = this.order;
-
+    
     this.sortedMembers = this.orderPipe.transform(theMembers, theOrder);
   }
 
-  ngAfterViewInit() {}
+  refresh() {
+    this.store.pipe(select(fromStore.getAllMembers))
+      .subscribe((aMembers) => {
+        if (aMembers && aMembers.length > 0) {
+          this.members = aMembers;
+          this.ngAfterViewInit();
+        }
+      });
+  }
 
   setOrder(orderBy: string) {
 

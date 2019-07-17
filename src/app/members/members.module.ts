@@ -24,6 +24,9 @@ import * as fromContainers from './containers';
 // components
 import * as fromComponents from './components';
 
+// guards
+import * as fromGuards from './guards';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -36,6 +39,7 @@ import * as fromComponents from './components';
     ...fromComponents.components
   ],
   providers: [
+    ...fromGuards.guards,
   ],
 })
 export class MembersModule {

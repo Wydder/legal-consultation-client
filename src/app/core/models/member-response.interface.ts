@@ -1,8 +1,9 @@
-import { Address } from './address.model';
-
-export interface StorageSpaceResponse {
+export interface MemberResponse {
   id: number;
-  name: string;
-  type: string;
-  address: Address;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  district: string;
+  organisation: string;
 }

@@ -25,7 +25,7 @@ export class Member {
   }
 
   fromJson(aJson: IMember) {
-    this.id = aJson.id;
+    this.id = aJson.id || undefined;
     this.firstName = aJson.firstName;
     this.lastName = aJson.lastName;
     this.email = aJson.email;

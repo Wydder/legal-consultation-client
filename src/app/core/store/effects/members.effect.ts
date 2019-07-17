@@ -4,10 +4,10 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
 // model
-import { Member } from '@app/core/models';
+import { Member } from '../../models';
 
 // services
-import { MembersService } from '@app/core/services';
+import { MembersService } from '../../services';
 
 // actions
 import * as memberActions from '../actions/members.action';

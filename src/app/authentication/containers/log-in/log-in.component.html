@@ -1,0 +1,51 @@
+<section id="log-in" fxLayout="column" fxLayoutAlign="center center">
+  <form [formGroup]="logInForm" fxLayout="column">
+    <mat-form-field>
+      <input
+        matInput
+        #usernameOrEmail
+        name="usernameOrEmail"
+        maxlength="40"
+        placeholder="{{'login.label.Username.or.email' | translate}}"
+        required
+        formControlName="usernameOrEmail"
+      />
+      <mat-hint align="end">{{ usernameOrEmail.value.length }} / 40</mat-hint>
+      <ng-container *ngIf="logInForm.controls.usernameOrEmail.errors">
+        <mat-error *ngFor="let error of logInForm.controls.usernameOrEmail.errors | keyvalue">
+          {{error.key | translate}}
+        </mat-error>
+      </ng-container>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        #password
+        name="password"
+        maxlength="100"
+        placeholder="{{'login.label.Password' | translate}}"
+        required
+        formControlName="password"
+        type="password"
+      />
+      <mat-hint align="end">{{ password.value.length }} / 100</mat-hint>
+      <ng-container *ngIf="logInForm.controls.password.errors">
+        <mat-error *ngFor="let error of logInForm.controls.password.errors | keyvalue">
+          {{error.key | translate : error.value}}
+        </mat-error>
+      </ng-container>
+    </mat-form-field>
+
+    <section class="buttons">
+      <button mat-raised-button [disabled]="!logInForm.valid" color="primary" (click)="onSubmit()">Log in</button>
+      <button mat-button (click)="signUp()">Sign up</button>
+    </section>
+
+  </form>
+  <ng-container *ngIf="generalErrors">
+    <mat-error *ngFor="let error of generalErrors">
+      {{error.i18nErrorKey | translate : error.i18nErrorArguments}}
+    </mat-error>
+  </ng-container>
+</section>

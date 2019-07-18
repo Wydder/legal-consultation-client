@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import { Member } from '../../models';
 
 export enum MemberActionTypes {
-  LoadMembers = '[Storage Spaces] Load Members',
-  LoadMembersFail = '[Storage Spaces] Load Members Fail',
-  LoadMembersSuccess = '[Storage Spaces] Load Members Success',
+  LoadMembers = '[Members] Load Members',
+  LoadMembersFail = '[Members] Load Members Fail',
+  LoadMembersSuccess = '[Members] Load Members Success',
 }
 
 // load members

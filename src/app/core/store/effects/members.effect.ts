@@ -12,7 +12,9 @@ import { MembersService } from '../../services';
 // actions
 import * as memberActions from '../actions/members.action';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class MembersEffects {
 
   @Effect()

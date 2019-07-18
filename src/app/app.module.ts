@@ -34,7 +34,6 @@ export const httpInterceptorProviders = [
     multi: true
   },
 ];
-=======
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }

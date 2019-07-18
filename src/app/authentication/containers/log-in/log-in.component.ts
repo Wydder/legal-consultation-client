@@ -5,10 +5,12 @@ import {
   // Services
   AuthenticationApiService,
   // Models
+  LoginRequest
 } from '@app/core';
-import {LoginRequest} from '@app/core/models/login-request';
-import {I18nError} from '@app/core/http/errors/i18n-error';
-import {Tools} from '@app/shared/utils/tools';
+
+import { I18nError } from '@app/core/http/errors/i18n-error';
+import { Tools } from '@app/shared/utils/tools';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',

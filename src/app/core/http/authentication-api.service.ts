@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { environment } from '@env/environment.local';
 import { environment } from '@env/environment';
 
 import { AuthenticationService } from '../services';

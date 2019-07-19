@@ -7,7 +7,7 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 import { Member } from '../../models';
 
 // services
-import { MembersService } from '../../services';
+import { MembersService } from '../../services/members.service';
 
 // actions
 import * as memberActions from '../actions/members.action';

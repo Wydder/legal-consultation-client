@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map, mergeMap, toArray } from 'rxjs/operators';
 
 // services
-import { MembersApiService } from '../http';
+import { MembersApiService } from '../http/members-api.service';
 
 // models
 import { Member, MemberResponse } from '../models';

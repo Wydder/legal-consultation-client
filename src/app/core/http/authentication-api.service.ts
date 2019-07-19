@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '@env/environment.local';
 
-import { AuthenticationService } from '../services';
+import { AuthenticationService } from '../services/authentication.service';
 
 // modules
 import { CoreModule } from '../core.module';

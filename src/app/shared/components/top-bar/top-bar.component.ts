@@ -28,8 +28,6 @@ export class TopBarComponent extends BaseComponent implements OnInit {
     alert('That`s sad, you just logged out');
   }
 
-  applyFilter() {}
-
   profile() {
     this.router.navigate(['home']);
   }

@@ -1,5 +1,4 @@
 {
-  "required": "Mandatory field.",
   "validation.Resource.not.found": "Resource was not found.",
 
   "register": {
@@ -11,7 +10,7 @@
   "login": {
     "label": {
       "Username.or.email": "Username or email",
-      "Password": "Parola"
+      "Password": "Password"
     },
     "Bad.credentials": "The specified username, email or password are not correct.",
     "UsernameOrEmail.not.empty": "Username or email is mandatory",

@@ -5,14 +5,10 @@ div#top-bar {
   height: $legal-consult-header-height;
   padding-right: $legal-consult-padding-xl;
 
-  img.logo {
-    height: $legal-consult-header-logo-size;
-    width: auto;
-    padding: 0 $legal-consult-padding-lg;
-  }
   .toolbar-row {
     mat-icon {
       height: $legal-consult-header-user-icon-size;
+      color: map-get($mat-congress-blue, 500);
       width: $legal-consult-header-user-icon-size;
       font-size: $legal-consult-header-user-icon-size;
       margin: $legal-consult-margin-md;
@@ -24,7 +20,7 @@ div#top-bar {
       font-weight: bold;
     }
     span.name {
-      color: map-get($mat-congress-blue, 700);
+      color: map-get($mat-congress-blue, 500);
     }
 
     mat-toolbar {
@@ -32,7 +28,11 @@ div#top-bar {
 
       button {
         border-radius: 0;
-        height: 100%;
+        height: $legal-consult-header-height;
+        font-family: Titillium Web;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $legal-consult-font-size-xs;
 
         .flag-icon {
           width: 100%;
@@ -48,15 +48,6 @@ div#top-bar {
       button.mat-button:hover,
       button.mat-button.active {
       }
-    }
-  }
-  .search-row {
-    .empty {
-      flex-grow: 1;
-    }
-    mat-form-field {
-      flex-grow: 1;
-      height: 60px;
     }
   }
 }

@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
-import * as fromHttpServices from './http';
 import * as fromServices from './services';
+import * as fromHttpServices from './http';
 
-import { effects, reducers } from './store';
+import { 
+  effects, 
+  reducers 
+} from './store';
 
 @NgModule({
   imports: [
@@ -15,8 +18,8 @@ import { effects, reducers } from './store';
     EffectsModule.forFeature(effects),
   ],
   providers: [
-    ...fromHttpServices.httpServices,
     ...fromServices.services,
+    ...fromHttpServices.httpServices,
   ],
 })
 export class CoreModule {}

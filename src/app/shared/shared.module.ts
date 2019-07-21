@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
+import { OrderModule } from 'ngx-order-pipe';
 import {TranslateModule} from '@ngx-translate/core';
 
 // components
@@ -20,6 +21,7 @@ const modules = [
   MaterialModule,
   ReactiveFormsModule,
   RouterModule,
+  OrderModule,
   TranslateModule,
 ];
 

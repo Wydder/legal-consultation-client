@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
+import { ActionReducer, StoreModule} from '@ngrx/store';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { environment } from '@env/environment';
 
@@ -25,7 +25,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-export const metaReducers: any[] = !environment.production ? [storeFreeze] : [];
+export const metaReducers = !environment.production ? [storeFreeze] : [];
 
 export const httpInterceptorProviders = [
   {

@@ -3,17 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '@env/environment';
-import { LoginRequest, User, UserRequest } from '../models';
-import {AuthenticationService} from '@app/core/services';
 
-@Injectable({ providedIn: 'root' })
+import { AuthenticationService } from '../services/authentication.service';
+
+import { LoginRequest, User, UserRequest } from '../models';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthenticationApiService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
   constructor(
+    private authenticationService: AuthenticationService,
     private http: HttpClient,
-    private authenticationService: AuthenticationService
   ) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(this.authenticationService.getCurrentUser()));
     this.currentUser = this.currentUserSubject.asObservable();

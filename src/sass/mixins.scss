@@ -7,6 +7,22 @@
   padding: 20px;
 }
 
+@mixin membersButtonAllign($direction:left) {
+  @if $direction == "right" {
+    border-left-color: $navbgblue;
+    border-right-width: 0px;
+  } @else if $direction == "left" {
+    border-right-color: $navbgblue;
+    border-left-width: 0px;
+  } @else if $direction == "up" {
+    border-bottom-color: $navbgblue;
+    border-top-width: 0px;
+  } @else if $direction == "down" {
+    border-top-color: $navbgblue;
+    border-bottom-width: 0px;
+  }
+}
+
 @mixin flex {
   display: flex;
 }

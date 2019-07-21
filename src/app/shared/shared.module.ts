@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { OrderModule } from 'ngx-order-pipe';
+import {TranslateModule} from '@ngx-translate/core';
 
 // components
 import * as fromComponents from './components';
@@ -21,6 +22,7 @@ const modules = [
   ReactiveFormsModule,
   RouterModule,
   OrderModule,
+  TranslateModule,
 ];
 
 @NgModule({

@@ -9,17 +9,17 @@ export enum MemberActionTypes {
 
 // load members
 export class LoadMembers implements Action {
-  readonly type: string = MemberActionTypes.LoadMembers.toString();
+  readonly type: string = MemberActionTypes.LoadMembers;
   constructor(public payload?: any) {}
 }
 
 export class LoadMembersFail implements Action {
-  readonly type: string = MemberActionTypes.LoadMembersFail.toString();
+  readonly type: string = MemberActionTypes.LoadMembersFail;
   constructor(public payload: any) {}
 }
 
 export class LoadMembersSuccess implements Action {
-  readonly type: string = MemberActionTypes.LoadMembersSuccess.toString();
+  readonly type: string = MemberActionTypes.LoadMembersSuccess;
   constructor(public payload: Member[]) {}
 }
 

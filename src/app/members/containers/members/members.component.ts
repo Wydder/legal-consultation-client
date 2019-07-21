@@ -24,8 +24,8 @@ export enum OrderBy {
 })
 export class MembersComponent implements OnInit, AfterViewInit {
 
-  private reverse: boolean;
-  private order: string;
+  private reverse = false;
+  private order = OrderBy.Name as string;
   private viewMode: string;
   public members: Member[];
   public sortedMembers: Member[];
@@ -34,11 +34,7 @@ export class MembersComponent implements OnInit, AfterViewInit {
     private router: Router,
     private orderPipe: OrderPipe,
     private store: Store<fromStore.MemberState>,
-  ) {
-    this.order = OrderBy.Name;
-    this.reverse = false;
-    this.members = [];  
-  }
+  ) { }
 
   ngOnInit() {
     this.refresh();
@@ -47,7 +43,7 @@ export class MembersComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     const theMembers = this.members;
     const theOrder = this.order;
-    
+
     this.sortedMembers = this.orderPipe.transform(theMembers, theOrder);
   }
 

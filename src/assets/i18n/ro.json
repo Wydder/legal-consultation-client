@@ -1,5 +1,4 @@
 {
-  "required": "Câmp obligatoriu.",
   "validation.Resource.not.found": "Resursa nu a fost găsită.",
 
   "register": {

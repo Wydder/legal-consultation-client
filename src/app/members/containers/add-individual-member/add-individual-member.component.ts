@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from '@app/core';
 
 @Component({
-  selector: 'app-member-profile',
-  templateUrl: './member-profile.component.html',
-  styleUrls: ['./member-profile.component.scss'],
+  selector: 'app-add-individual-member',
+  templateUrl: './add-individual-member.component.html',
+  styleUrls: ['./add-individual-member.component.scss'],
 })
 export class AddIndividualMemberComponent implements OnInit, AfterViewInit {
   private memberId: any;

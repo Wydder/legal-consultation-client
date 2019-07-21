@@ -17,6 +17,14 @@ const routes: Routes = [
     path: 'member-profile/:memberId',
     component: fromContainers.MemberProfileComponent,
   },
+  {
+    path: 'add-members',
+    component: fromContainers.AddMembersComponent,
+  },
+  {
+    path: 'add-members/add-individual-member',
+    component: fromContainers.AddIndividualMemberComponent,
+  },
 ];
 
 @NgModule({

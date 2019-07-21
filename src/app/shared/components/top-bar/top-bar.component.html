@@ -14,11 +14,11 @@
     </div>
 
     <mat-toolbar fxLayout="row" fxLayoutAlign="end stretch">
-      <button mat-button (click)="about()" routerLinkActive="active">Despre</button>
-      <button mat-button (click)="consultation()" routerLinkActive="active">In consultare</button>
-      <button mat-button (click)="archive()" routerLinkActive="active">Arhiva</button>
-      <button mat-button (click)="members()" routerLinkActive="active">Membri</button>
-      <button mat-button (click)="login()" routerLinkActive="active">Log in</button>
+      <button mat-button (click)="about()" routerLinkActive="active">{{ 'topbar.about' | translate }}</button>
+      <button mat-button (click)="consultation()" routerLinkActive="active">{{ 'topbar.inConsultation' | translate }}</button>
+      <button mat-button (click)="archive()" routerLinkActive="active">{{ 'topbar.archive' | translate }}</button>
+      <button mat-button (click)="members()" routerLinkActive="active">{{ 'topbar.members' | translate }}</button>
+      <button mat-button (click)="login()" routerLinkActive="active">{{ 'topbar.login' | translate }}</button>
       <button mat-button [matMenuTriggerFor]="selectLanguage">
         <span class="flag-icon flag-icon-squared"
               [ngClass]="{'flag-icon-ro': currentLanguage === 'ro', 'flag-icon-gb': currentLanguage === 'en'}">

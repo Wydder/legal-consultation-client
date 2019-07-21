@@ -1,12 +1,10 @@
 {
   "validation.Resource.not.found": "Resource was not found.",
-
   "register": {
     "Success": "User registered successfully.",
     "Duplicate.username": "The username is already used.",
     "Duplicate.email": "The email is already used."
   },
-
   "login": {
     "label": {
       "Username.or.email": "Username or email",
@@ -15,5 +13,12 @@
     "Bad.credentials": "The specified username, email or password are not correct.",
     "UsernameOrEmail.not.empty": "Username or email is mandatory",
     "Password.not.empty": "Password is mandatory."
+  },
+  "topbar": {
+    "about": "About",
+    "inConsultation": "In consultation",
+    "archive": "Archive",
+    "members": "Members",
+    "login": "Log in"
   }
 }

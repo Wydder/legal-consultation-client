@@ -1,13 +1,12 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '@app/core';
 
 @Component({
   selector: 'app-member-profile',
   templateUrl: './member-profile.component.html',
   styleUrls: ['./member-profile.component.scss'],
 })
-export class MemberProfileComponent implements OnInit, AfterViewInit {
+export class MemberProfileComponent implements OnInit {
   private memberId: any;
   constructor(
     private route: ActivatedRoute,
@@ -18,6 +17,4 @@ export class MemberProfileComponent implements OnInit, AfterViewInit {
       this.memberId = aParams.memberId;
     });
   }
-
-  ngAfterViewInit() {}
 }

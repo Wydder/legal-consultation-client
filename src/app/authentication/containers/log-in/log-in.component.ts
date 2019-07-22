@@ -3,9 +3,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 import { ActivatedRoute, Router } from '@angular/router';
 
 import {
-  // Services
   AuthenticationApiService,
-  // Models
   LoginRequest
 } from '@app/core';
 

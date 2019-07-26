@@ -16,7 +16,7 @@ export enum MembersView {
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss'],
 })
-export class SearchBarComponent implements OnInit, AfterViewInit {
+export class SearchBarComponent implements OnInit {
 
   @Output() blockView: EventEmitter<string> = new EventEmitter();
   @Output() listView: EventEmitter<string> = new EventEmitter();
@@ -31,8 +31,6 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
     this.onBlockView();
   }
 
-  ngAfterViewInit() {}
-
   onBlockView() {
     this.viewMode = MembersView.BlockView.toString();
     const theViewMode = this.viewMode;
@@ -46,8 +44,6 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
 
     this.listView.emit(theViewMode);
   }
-
-  applyFilter() {}
 
   get membersView() {
     return MembersView;

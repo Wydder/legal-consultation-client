@@ -15,5 +15,14 @@
     "Bad.credentials": "Numele de utilizator, mailul sau parola nu sunt corecte.",
     "UsernameOrEmail.not.empty": "Numele de utilizator sau mailul este obligatoriu.",
     "Password.not.empty": "Parola este obligatorie."
+  },
+  "membersList": {
+    "sortBy": {
+      "lastName": "Nume",
+      "firstName": "Prenume",
+      "organisation": "Organizatie",
+      "county": "Judet",
+      "specialisation": "Specializare"
+    }
   }
 }

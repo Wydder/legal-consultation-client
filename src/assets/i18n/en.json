@@ -15,5 +15,15 @@
     "Bad.credentials": "The specified username, email or password are not correct.",
     "UsernameOrEmail.not.empty": "Username or email is mandatory",
     "Password.not.empty": "Password is mandatory."
+  },
+  "membersList": {
+    "sortByText": "Sort by",
+    "sortByList": {
+      "lastName": "Last name",
+      "firstName": "First name",
+      "organisation": "Organisation",
+      "county": "County",
+      "specialisation": "Specialisation"
+    }
   }
 }

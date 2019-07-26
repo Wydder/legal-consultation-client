@@ -9,7 +9,7 @@ import { OrderPipe } from 'ngx-order-pipe';
 import { User, Member } from '@app/core';
 
 export enum OrderBy {
-  Name = 'name',
+  LastName = 'lastName',
   Email = 'email',
   FirstName = 'firstName',
   Organisation = 'organisation',
@@ -25,7 +25,7 @@ export enum OrderBy {
 export class MembersComponent implements OnInit, AfterViewInit {
 
   private reverse = false;
-  private order = OrderBy.Name as string;
+  private order = OrderBy.LastName as string;
   private viewMode: string;
   public members: Member[];
   public sortedMembers: Member[];

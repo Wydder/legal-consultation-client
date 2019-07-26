@@ -10,7 +10,7 @@ import * as fromGuards from './guards';
 const routes: Routes = [
   {
     path: '',
-    canActivate: [fromGuards.MembersGuard],
+    //canActivate: [fromGuards.MembersGuard],
     component: fromContainers.MembersComponent,
   },
   {

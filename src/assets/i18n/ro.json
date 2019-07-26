@@ -1,6 +1,8 @@
 {
+  "required": "Câmp obligatoriu.",
+  "email": "Adresă de mail incorectă.",
   "validation.Resource.not.found": "Resursa nu a fost găsită.",
-
+  
   "register": {
     "Success": "Utilizatorul a fost înregistrat cu succes.",
     "Duplicate.username": "Numele de utilizator este deja folosit.",
@@ -16,6 +18,7 @@
     "UsernameOrEmail.not.empty": "Numele de utilizator sau mailul este obligatoriu.",
     "Password.not.empty": "Parola este obligatorie."
   },
+  
   "membersList": {
     "sortByText": "Sorteaza dupa",
     "sortBy": {
@@ -26,6 +29,7 @@
       "specialisation": "Specializare"
     }
   },
+  
   "searchBar": {
     "searchDocument": "Cauta un document...",
     "searchMember": "Cauta un membru...",

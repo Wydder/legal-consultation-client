@@ -25,5 +25,11 @@
       "county": "County",
       "specialisation": "Specialisation"
     }
+  },
+  "searchBar": {
+    "searchDocument": "Search for a document...",
+    "searchMember": "Search for a member...",
+    "addDocument": "Add documents",
+    "addMember": "Add members"
   }
 }

@@ -17,6 +17,7 @@
     "Password.not.empty": "Parola este obligatorie."
   },
   "membersList": {
+    "sortByText": "Sorteaza dupa",
     "sortBy": {
       "lastName": "Nume",
       "firstName": "Prenume",
@@ -24,5 +25,11 @@
       "county": "Judet",
       "specialisation": "Specializare"
     }
+  },
+  "searchBar": {
+    "searchDocument": "Cauta un document...",
+    "searchMember": "Cauta un membru...",
+    "addDocuments": "Adauga documente",
+    "addMembers": "Adauga membri"
   }
 }

@@ -9,7 +9,7 @@ import { OrderPipe } from 'ngx-order-pipe';
 import { User, Member } from '@app/core';
 
 export enum OrderBy {
-  Name = 'name',
+  LastName = 'lastName',
   Email = 'email',
   FirstName = 'firstName',
   Organisation = 'organisation',
@@ -25,7 +25,7 @@ export enum OrderBy {
 export class MembersComponent implements OnInit, AfterViewInit {
 
   private reverse = false;
-  private order = OrderBy.Name as string;
+  private order = OrderBy.LastName as string;
   private viewMode: string;
   public members: Member[];
   public sortedMembers: Member[];
@@ -83,50 +83,11 @@ export class MembersComponent implements OnInit, AfterViewInit {
     return OrderBy;
   }
 
-  getUsers() {
-    return [
-      {
-        id: 1,
-        email: 'sbasd@asdg.com',
-        name: 'beasdbe',
-        telephone: '0739171656',
-        organisation: 'schasdech',
-      },
-      {
-        id: 2,
-        email: 'adb@dag.com',
-        name: 'abedaadbe',
-        telephone: '0759171656',
-        organisation: 'bchsech',
-      },
-      {
-        id: 3,
-        email: 'gbfs@fsg.com',
-        name: 'hbedasbe',
-        telephone: '0769171656',
-        organisation: 'vchech',
-      },
-      {
-        id: 4,
-        email: 'ybsf@sfg.com',
-        name: 'jbeasdbe',
-        telephone: '0779171656',
-        organisation: 'trchech',
-      },
-      {
-        id: 5,
-        email: 'wbsdf@gsdf.com',
-        name: 'sebebsdfe',
-        telephone: '0739171656',
-        organisation: 'acsdfhech',
-      },
-      {
-        id: 6,
-        email: 'wbsdf@gsdf.com',
-        name: 'jsebebsdfe',
-        telephone: '0729171656',
-        organisation: 'acsdfhech',
-      },
-    ];
+  membersLength() {
+    const members = this.members;
+    if (members) {
+      return members.length;
+    }
+    return 0
   }
 }

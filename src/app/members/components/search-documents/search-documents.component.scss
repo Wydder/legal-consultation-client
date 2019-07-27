@@ -1,0 +1,21 @@
+@import 'variables';
+
+mat-toolbar {
+  margin: $legal-consult-margin-xl 0;
+
+  .search-input {
+    height: $legal-consult-search-toolbar-height;
+    padding: $legal-consult-padding-md;
+    font-size: $legal-consult-font-size-sm;
+    margin-right: $legal-consult-padding-md;
+
+    mat-icon {
+      margin: 0 $legal-consult-margin-lg;
+    }
+    input {
+      width: $legal-consult-search-document-width-input;
+      border: none;
+      outline: none;
+    }
+  }  
+}

@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import {
-  // Services
-  AuthenticationApiService,
-  // Models
-  LoginRequest
-} from '@app/core';
+import { AuthenticationApiService, LoginRequest } from '@app/core';
 
 import { I18nError } from '@app/core/http/errors/i18n-error';
 import { Tools } from '@app/shared/utils/tools';

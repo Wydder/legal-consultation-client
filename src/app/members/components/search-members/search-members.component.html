@@ -1,7 +1,7 @@
 <mat-toolbar fxLayout="row" fxLayoutAlign="end center">
   <div class="search-input mat-elevation-z1" fxLayout="row" fxLayoutAlign="center center">
     <mat-icon>search</mat-icon>
-    <input (keyup)="applyFilter()" placeholder="Cauta membru...">
+    <input (keyup)="applyFilter()" placeholder="{{ 'searchBar.searchMember' | translate }}">
   </div>
   <button mat-button
           class="view-btn columns-2 mat-elevation-z1"
@@ -15,7 +15,7 @@
           (click)="onListView()">
     <fa-icon [icon]="['fas', 'bars']"></fa-icon>
   </button>
-  <button mat-button class="add-member">
-    <i class="material-icons">add_circle</i> Adauga membri
+  <button mat-button class="add-member" (click)="addMembers()">
+    <i class="material-icons">add_circle</i> {{ 'searchBar.addMembers' | translate }}
   </button>
 </mat-toolbar>

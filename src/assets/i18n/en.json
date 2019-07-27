@@ -1,4 +1,6 @@
 {
+  "required": "Mandatory field.",
+  "email": "Invalid email.",
   "validation.Resource.not.found": "Resource was not found.",
   "register": {
     "Success": "User registered successfully.",
@@ -14,11 +16,32 @@
     "UsernameOrEmail.not.empty": "Username or email is mandatory",
     "Password.not.empty": "Password is mandatory."
   },
+
   "topbar": {
     "about": "About",
     "inConsultation": "In consultation",
     "archive": "Archive",
     "members": "Members",
     "login": "Log in"
+  },
+  
+  "membersList": {
+    "sortByText": {
+      "sortBy": "Sort by"
+    },
+    "sortByList": {
+      "lastName": "Last name",
+      "firstName": "First name",
+      "organisation": "Organisation",
+      "county": "County",
+      "specialisation": "Specialisation"
+    }
+  },
+  
+  "searchBar": {
+    "searchDocument": "Search for a document...",
+    "searchMember": "Search for a member...",
+    "addDocuments": "Add documents",
+    "addMembers": "Add members"
   }
 }

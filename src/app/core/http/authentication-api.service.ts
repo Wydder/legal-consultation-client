@@ -4,8 +4,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '@env/environment';
 
+// services
 import { AuthenticationService } from '../services/authentication.service';
 
+// models
 import { LoginRequest, User, UserRequest } from '../models';
 
 @Injectable({

@@ -31,23 +31,6 @@ export class MembersEffects {
       })
     );
 
-  // @Effect()
-  // showLoading$ = this.actions$
-  //   .pipe(
-  //     ofType(memberActions.MemberActionTypes.LoadMembers),
-  //     mapTo(new loadingActions.ShowLoading())
-  //   );
-  //
-  // @Effect()
-  // hideLoading$ = this.actions$
-  //   .pipe(
-  //     ofType(
-  //       memberActions.MemberActionTypes.LoadMembersFail,
-  //       memberActions.MemberActionTypes.LoadMembersSuccess
-  //     ),
-  //     mapTo(new loadingActions.HideLoading())
-  //   );
-
   constructor(
     private actions$: Actions,
     private memberService: MembersService,

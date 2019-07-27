@@ -1,10 +1,10 @@
 import {
-  AfterViewInit,
   Component,
   OnInit,
   Output,
   EventEmitter
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 export enum MembersView {
   ListView = '100%',
@@ -12,18 +12,18 @@ export enum MembersView {
 }
 
 @Component({
-  selector: 'app-search-bar',
-  templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.scss'],
+  selector: 'app-search-members',
+  templateUrl: './search-members.component.html',
+  styleUrls: ['./search-members.component.scss'],
 })
-export class SearchBarComponent implements OnInit, AfterViewInit {
+export class SearchMembersComponent implements OnInit {
 
   @Output() blockView: EventEmitter<string> = new EventEmitter();
   @Output() listView: EventEmitter<string> = new EventEmitter();
 
   viewMode: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.viewMode = MembersView.BlockView.toString();
   }
 
@@ -31,7 +31,9 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
     this.onBlockView();
   }
 
-  ngAfterViewInit() {}
+  addMembers() {
+    this.router.navigate(['members/add-members']);
+  }
 
   onBlockView() {
     this.viewMode = MembersView.BlockView.toString();
@@ -46,8 +48,6 @@ export class SearchBarComponent implements OnInit, AfterViewInit {
 
     this.listView.emit(theViewMode);
   }
-
-  applyFilter() {}
 
   get membersView() {
     return MembersView;

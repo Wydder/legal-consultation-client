@@ -1,52 +1,52 @@
 <section id="members-page" class="page-view" fxLayout="column">
 
-  <app-search-bar (blockView)="onBlockView($event)"
+  <app-search-members (blockView)="onBlockView($event)"
                   (listView)="onListView($event)">
-  </app-search-bar>
+  </app-search-members>
 
   <div class="members-grid">
     <div class="grid-header" fxLayout="row" fxLayoutAlign="center center">
       <div class="users-length">
         <span>
-          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> {{ members.length }} total
+          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> {{ membersLength() }} total
         </span>
       </div>
       <div class="sort">
         <span>
-          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> Sorteaza dupa:
+          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> {{ 'membersList.sortByText.sortBy' | translate }}:
         </span>
         <button mat-button
-                [class.active]="order === orderBy.Name.toString()"
-                (click)="setOrder('name')">
-          Nume
+                [class.active]="order === orderBy.LastName.toString()"
+                (click)="setOrder('lastName')">
+          {{ 'membersList.sortByList.lastName' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.FirstName.toString()"
                 (click)="setOrder('firstName')">
-          Prenume
+          {{ 'membersList.sortByList.firstName' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.Organisation.toString()"
                 (click)="setOrder('organisation')">
-          Organizatie
+          {{ 'membersList.sortByList.organisation' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.County.toString()"
                 (click)="setOrder('county')">
-          Judet
+          {{ 'membersList.sortByList.county' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.Specialisation.toString()"
                 (click)="setOrder('specialisation')">
-          Specializare
+          {{ 'membersList.sortByList.specialisation' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
@@ -80,7 +80,6 @@
                   color="primary"
                   class="mat-elevation-z0"
                   (click)="viewMemberProfile(member)">
-
             Vezi profil
           </button>
         </div>

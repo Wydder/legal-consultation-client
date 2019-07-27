@@ -1,6 +1,9 @@
 @import '~@angular/material/theming';
 @import 'variables.scss';
 
+// local variable
+$legal-consult-assets-path: "../../../../assets/";
+
 div#left-menu {
   width: $legal-consult-sidenav-width;
   height: 100%;
@@ -22,16 +25,16 @@ div#left-menu {
       border-top: thin solid map-get($mat-white, 50);
     }
     button.home {
-      background-image: url("../../../../assets/home.png");
+      background-image: url(#{$legal-consult-assets-path}/home.png);
     }
     button.dictionary {
-      background-image: url("../../../../assets/big-dictionary.png");
+      background-image: url(#{$legal-consult-assets-path}/big-dictionary.png);
     }
     button.settings {
-      background-image: url("../../../../assets/three-cogwheels-linked-by-lines-in-triangular-shape.png");
+      background-image: url(#{$legal-consult-assets-path}/three-cogwheels-linked-by-lines-in-triangular-shape.png);
     }
     button.help {
-      background-image: url("../../../../assets/question.png");
+      background-image: url(#{$legal-consult-assets-path}/question.png);
     }
   }
 }

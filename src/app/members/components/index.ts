@@ -1,7 +1,10 @@
-import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SearchDocumentsComponent } from './search-documents/search-documents.component';
+import { SearchMembersComponent } from './search-members/search-members.component';
 
 export const components: any[] = [
-  SearchBarComponent,
+  SearchDocumentsComponent,
+  SearchMembersComponent,
 ];
 
-export * from './search-bar/search-bar.component';
+export * from './search-documents/search-documents.component';
+export * from './search-members/search-members.component';

@@ -13,7 +13,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 // modules
 import { AppRoutingModule } from './app-routing.module';
-import {CoreModule} from '@app/core/core.module';
+import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 // guards
@@ -25,7 +25,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-export const metaReducers = !environment.production ? [storeFreeze] : [];
+export const metaReducers: any[] = !environment.production ? [storeFreeze] : [];
 
 export const httpInterceptorProviders = [
   {

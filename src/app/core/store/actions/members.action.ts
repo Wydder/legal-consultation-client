@@ -5,8 +5,8 @@ export enum MemberActionTypes {
   LoadMembers = '[Members] Load Members',
   LoadMembersFail = '[Members] Load Members Fail',
   LoadMembersSuccess = '[Members] Load Members Success',
-  CreateMember = '[Members] Create Member Success',
-  CreateMemberFail = '[Members] Create Member Success',
+  CreateMember = '[Members] Create Member',
+  CreateMemberFail = '[Members] Create Member Fail',
   CreateMemberSuccess = '[Members] Create Member Success',
 }
 
@@ -26,24 +26,27 @@ export class LoadMembersSuccess implements Action {
   constructor(public payload: Member[]) {}
 }
 
-// create member
-export class CreateStorageSpace implements Action {
-  readonly type: string = StorageSpaceActionTypes.CreateStorageSpace;
-  constructor(public payload: StorageSpace) {}
+// create individual member
+export class CreateMember implements Action {
+  readonly type: string = MemberActionTypes.CreateMember;
+  constructor(public payload: Member) {}
 }
 
-export class CreateStorageSpaceFail implements Action {
-  readonly type: string = StorageSpaceActionTypes.CreateStorageSpaceFail;
+export class CreateMemberFail implements Action {
+  readonly type: string = MemberActionTypes.CreateMemberFail;
   constructor(public payload: any) {}
 }
 
-export class CreateStorageSpaceSuccess implements Action {
-  readonly type: string = StorageSpaceActionTypes.CreateStorageSpaceSuccess;
-  constructor(public payload: StorageSpace) {}
+export class CreateMemberSuccess implements Action {
+  readonly type: string = MemberActionTypes.CreateMemberSuccess;
+  constructor(public payload: Member) {}
 }
 
 // action types
 export type MembersAction =
   LoadMembers
   | LoadMembersFail
-  | LoadMembersSuccess;
+  | LoadMembersSuccess
+  | CreateMember
+  | CreateMemberFail
+  | CreateMemberSuccess;

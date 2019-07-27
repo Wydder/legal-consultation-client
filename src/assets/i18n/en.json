@@ -25,6 +25,19 @@
     "login": "Log in"
   },
   
+  "addMembers": {
+    "title": "Add members",
+    "subTitle": {
+      "question": "Do you want to add members individually?",
+      "addNewMember": "Add a new member."
+    },
+    "options": {
+      "importCsv": "Import from a csv file",
+      "copyPaste": "Copy/paste from a excel file"
+    },
+    "continueBtn": "Continue"
+  },
+  
   "membersList": {
     "sortByText": {
       "sortBy": "Sort by"

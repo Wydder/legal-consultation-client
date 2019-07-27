@@ -26,7 +26,20 @@
     "members": "Membri",
     "login": "Log in"
   },
-  
+
+  "addMembers": {
+    "title": "Adauga membri",
+    "subTitle": {
+      "question": "Vrei sa adaugi membri individual?",
+      "addNewMember": "Adauga un membru nou."
+    },
+    "options": {
+      "importCsv": "Importa un fisier csv",
+      "copyPaste": "Copy/paste dintr-un document excel"
+    },
+    "continueBtn": "Continua"
+  },
+
   "membersList": {
     "sortByText": {
       "sortBy": "Sorteaza dupa"

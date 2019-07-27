@@ -2,6 +2,16 @@
     <app-search-documents></app-search-documents>
 
     <div class="add-members">
-
+        <h2>Add members</h2>
+        <div class="individual-member">
+            <p>Vrei sa adaugi membri individual? <span class="link" (click)="addIndividualMember()">Adauga un membru nou.</span></p>
+        </div>
+        <div class="select-method" fxLayout="column">
+            <mat-radio-group [(ngModel)]="addMembersType">
+                <mat-radio-button>Importa un fisier csv</mat-radio-button>
+                <mat-radio-button>Copy/paste dintr-un document excel</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <button mat-button disabled>Continua</button>
     </div>
 </section>

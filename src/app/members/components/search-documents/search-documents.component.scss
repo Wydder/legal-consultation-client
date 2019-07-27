@@ -1,7 +1,8 @@
 @import 'variables';
 
 mat-toolbar {
-  margin: $legal-consult-margin-xl 0;
+  margin-top: $legal-consult-margin-xl;
+  margin-bottom: 100px;
 
   .search-input {
     height: $legal-consult-search-toolbar-height;

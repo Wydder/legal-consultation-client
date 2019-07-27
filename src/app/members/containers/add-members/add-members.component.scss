@@ -2,4 +2,32 @@
 
 #add-members-page {
     height: calc(100% - #{$legal-consult-header-height});
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: normal;
+
+    .add-members {
+        margin: 0 15%;
+        .individual-member {
+            .link {
+                font-family: Titillium Web;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        .select-method {
+
+            mat-radio-group {
+
+                display: flex;
+                flex-direction: column;
+                margin: 15px 0;
+
+                mat-radio-button {
+                    margin: 5px; 
+                    font-family: Titillium Web;
+                }
+            }
+        }
+    }
 }

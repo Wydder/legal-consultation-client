@@ -1,19 +1,20 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { User } from '@app/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-members',
   templateUrl: './add-members.component.html',
   styleUrls: ['./add-members.component.scss'],
 })
-export class AddMembersComponent implements OnInit, AfterViewInit {
+export class AddMembersComponent implements OnInit {
   constructor(
-    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit() {}
+  addIndividualMember() {
+    this.router.navigate(['members/add-members/add-individual-member'])
+  }
 }

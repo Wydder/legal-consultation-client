@@ -13,40 +13,40 @@
       </div>
       <div class="sort">
         <span>
-          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> {{ "membersList.sortyByText" | translate }}:
+          <fa-icon class="circle-list" [icon]="['fas', 'circle']"></fa-icon> {{ 'membersList.sortByText.sortBy' | translate }}:
         </span>
         <button mat-button
                 [class.active]="order === orderBy.LastName.toString()"
                 (click)="setOrder('lastName')">
-          {{ "membersList.sortyByList.lastName" | translate }}
+          {{ 'membersList.sortByList.lastName' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.FirstName.toString()"
                 (click)="setOrder('firstName')">
-          {{ "membersList.sortyByList.firstName" | translate }}
+          {{ 'membersList.sortByList.firstName' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.Organisation.toString()"
                 (click)="setOrder('organisation')">
-          {{ "membersList.sortyByList.organisation" | translate }}
+          {{ 'membersList.sortByList.organisation' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.County.toString()"
                 (click)="setOrder('county')">
-          {{ "membersList.sortyByList.county" | translate }}
+          {{ 'membersList.sortByList.county' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>
         <button mat-button
                 [class.active]="order === orderBy.Specialisation.toString()"
                 (click)="setOrder('specialisation')">
-          {{ "membersList.sortyByList.specialisation" | translate }}
+          {{ 'membersList.sortByList.specialisation' | translate }}
           <fa-icon [hidden]="reverse" [icon]="['fas', 'sort-down']"></fa-icon>
           <fa-icon [hidden]="!reverse" [icon]="['fas', 'sort-up']"></fa-icon>
         </button>

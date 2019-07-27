@@ -20,8 +20,10 @@
   },
   
   "membersList": {
-    "sortByText": "Sorteaza dupa",
-    "sortBy": {
+    "sortByText": {
+      "sortBy": "Sorteaza dupa"
+    },
+    "sortByList": {
       "lastName": "Nume",
       "firstName": "Prenume",
       "organisation": "Organizatie",

@@ -82,4 +82,12 @@ export class MembersComponent implements OnInit, AfterViewInit {
   get orderBy() {
     return OrderBy;
   }
+
+  membersLength() {
+    const members = this.members;
+    if (members) {
+      return members.length;
+    }
+    return 0
+  }
 }

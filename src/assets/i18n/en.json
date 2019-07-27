@@ -1,4 +1,6 @@
 {
+  "required": "Mandatory field.",
+  "email": "Invalid email.",
   "validation.Resource.not.found": "Resource was not found.",
 
   "register": {
@@ -16,6 +18,7 @@
     "UsernameOrEmail.not.empty": "Username or email is mandatory",
     "Password.not.empty": "Password is mandatory."
   },
+  
   "membersList": {
     "sortByText": "Sort by",
     "sortByList": {
@@ -26,6 +29,7 @@
       "specialisation": "Specialisation"
     }
   },
+  
   "searchBar": {
     "searchDocument": "Search for a document...",
     "searchMember": "Search for a member...",

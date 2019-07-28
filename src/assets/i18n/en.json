@@ -37,18 +37,22 @@
     },
     "continueBtn": "Continue"
   },
-  
-  "membersList": {
-    "sortByText": {
-      "sortBy": "Sort by"
-    },
-    "sortByList": {
+
+  "general": {
+    "labels": {
       "lastName": "Last name",
       "firstName": "First name",
-      "organisation": "Organisation",
+      "email": "Email",
+      "telephone": "Telephone",
       "county": "County",
+      "organisation": "Organisation",
       "specialisation": "Specialisation"
     }
+  },
+
+  "membersPage": {
+    "sortByText": "Sort by",
+    "addIndividualMemberTitle": "Add member"
   },
   
   "searchBar": {

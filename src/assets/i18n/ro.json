@@ -40,17 +40,21 @@
     "continueBtn": "Continua"
   },
 
-  "membersList": {
-    "sortByText": {
-      "sortBy": "Sorteaza dupa"
-    },
-    "sortByList": {
+  "general": {
+    "labels": {
       "lastName": "Nume",
       "firstName": "Prenume",
-      "organisation": "Organizatie",
+      "email": "Email",
+      "telephone": "Telefon",
       "county": "Judet",
+      "organisation": "Organizatie",
       "specialisation": "Specializare"
     }
+  },
+
+  "membersPage": {
+    "sortByText": "Sorteaza dupa",
+    "addIndividualMemberTitle": "Adauga membru"
   },
   
   "searchBar": {

@@ -1,0 +1,16 @@
+@import 'variables';
+
+#add-individual-member {
+    height: calc(100% - #{$legal-consult-header-height});
+    
+    .add-member {
+        margin: 0 15%;
+        font-family: Titillium Web;
+        font-style: normal;
+        font-weight: normal;
+
+        form {
+            width: 30%;
+        }              
+    }
+}

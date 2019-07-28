@@ -1,1 +1,36 @@
-<p>Page for member with ID: {{ memberId }}</p>
+<section id="add-individual-member" class="page-view">
+    <app-search-documents></app-search-documents>
+
+    <div class="add-member" fxLayout="column" fxLayoutAlign="center center">
+        <h2>Adauga membru</h2>
+        <!-- [formGroup]="createMemberForm" -->
+        <form fxLayout="column">
+            <mat-form-field class="">
+                <input matInput placeholder="Nume" value="">
+            </mat-form-field>
+            <mat-form-field class="">
+                <input matInput placeholder="Prenume" value="">
+            </mat-form-field>
+            <mat-form-field class="">
+                <input matInput placeholder="Email" value="">
+            </mat-form-field>
+            <mat-form-field class="">
+                <input matInput placeholder="Telefon" value="">
+            </mat-form-field>
+            <mat-form-field class="">
+                <input matInput placeholder="Judet" value="">
+            </mat-form-field>
+            <mat-form-field class="">
+                <input matInput placeholder="Organizatie" value="">
+            </mat-form-field>
+            <!-- [disabled]="!createMemberForm.valid" -->
+            <section class="buttons">
+                <button mat-raised-button color="primary" (click)="onSubmit()">
+                    Creeaza
+                </button>
+                <button mat-button (click)="onCancel()">Anuleaza</button>
+            </section>
+        </form>
+
+    </div>
+</section>
